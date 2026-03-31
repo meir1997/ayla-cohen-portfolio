@@ -3,19 +3,43 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
+      {/* מי אני - Hero Section */}
       <div className="pt-32 pb-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+            {/* Photo */}
+            <div className="order-2 md:order-1">
+              <img
+                src="/ayala-portrait.jpg"
+                alt="אילה כהן - אדריכלות ועיצוב פנים"
+                className="w-full rounded-lg object-cover"
+              />
+            </div>
+
             {/* Text */}
-            <div className="space-y-6">
+            <div className="order-1 md:order-2 space-y-6">
               <h1 className="text-4xl md:text-5xl font-light leading-tight text-dark">
-                עיצוב וארכיטקטורה מודרנית
+                מי אני
               </h1>
+
               <p className="text-lg text-gray-600 leading-relaxed">
-                אנחנו יוצרים חללים יוקרתיים שמשלבים עיצוב מודרני עם פונקציונליות מעולה. כל פרויקט הוא סיפור ייחודי של טעם וחדשנות.
+                בית הוא המקום בו מגשימים חלומות, הוא מלווה אותנו מידי יום בכל החוויות השגרתיות והאירועים המרגשים. כשהבית מתוכנן כראוי הוא יכול להכיל את כל הדברים החשובים לנו מבלי להתפשר על פרקטיקה, פונקציונליות ונוחות.
               </p>
-              <div className="flex gap-4">
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                כשנכנס העיצוב לתמונה - התוצאה מדברת בעד עצמה.
+              </p>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                מגיל צעיר מאד הבנתי שהאדריכלות והעיצוב הם חלק מחיי. אני זוכרת את עצמי כבר מגיל צעיר מאד משרטטת בעיפרון בתים וצובעת לפי סוגי החומרים. בגיל 15 החלטתי להיחשף לעולם הזה בצורה מקצועית במסגרת מגמת אדריכלות בתיכון ומאז הכול היסטוריה...
+              </p>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                הסטודיו שלי מתמחה בתכנון אדריכלי ועיצוב פנים הן במגזר הפרטי והן במסחרי. אני מלווה את לקוחותי כבר מרכישת הנכס והבנת הצרכים הספציפיים, תוך תכנון אדריכלי מוקפד וניסיון עיצובי עשיר.
+              </p>
+
+              <div className="flex gap-4 pt-2">
                 <Link
                   href="/projects"
                   className="px-8 py-3 bg-dark text-white hover:bg-gray-800 transition text-sm font-medium"
@@ -29,15 +53,6 @@ export default function Home() {
                   יצירת קשר
                 </Link>
               </div>
-            </div>
-
-            {/* Hero Image */}
-            <div className="h-96 rounded-lg overflow-hidden">
-              <img
-                src="/api/images/penthouse-jerusalem/18.jpg"
-                alt="עיצוב וארכיטקטורה יוקרתי"
-                className="w-full h-full object-cover"
-              />
             </div>
           </div>
         </div>
@@ -96,29 +111,6 @@ export default function Home() {
             >
               צפה בכל הפרויקטים →
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
-            השירותים שלנו
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              { title: 'עיצוב פנים', description: 'עיצוב מלא של חללים עם דגש על טעם וכיסוי' },
-              { title: 'תכנון אדריכלי', description: 'תכנון מקצועי של פרויקטים מורכבים' },
-              { title: 'ניהול פרויקטים', description: 'פיקוח מלא מרעיון להשלמה' },
-              { title: 'הנדסה קדימה', description: 'ייעוץ בחומרים וטכנולוגיות חדשות' }
-            ].map((service) => (
-              <div key={service.title} className="space-y-3">
-                <h3 className="text-lg font-light">{service.title}</h3>
-                <p className="text-sm text-gray-600">{service.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
