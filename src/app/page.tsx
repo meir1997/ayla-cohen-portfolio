@@ -31,9 +31,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Placeholder for Image */}
-            <div className="bg-secondary h-96 rounded-lg flex items-center justify-center">
-              <span className="text-gray-400">תמונה</span>
+            {/* Hero Image */}
+            <div className="h-96 rounded-lg overflow-hidden">
+              <img
+                src="/api/images/penthouse-jerusalem/18.jpg"
+                alt="עיצוב וארכיטקטורה יוקרתי"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -51,17 +55,20 @@ export default function Home() {
               {
                 name: 'בית במבוא חורון',
                 projects: 37,
-                href: '/projects/mevo-choron'
+                href: '/projects/mevo-choron',
+                thumbnail: '/api/images/mevo-choron/11.jpg'
               },
               {
                 name: 'פנטהאוז בירושלים',
                 projects: 28,
-                href: '/projects/penthouse-jerusalem'
+                href: '/projects/penthouse-jerusalem',
+                thumbnail: '/api/images/penthouse-jerusalem/18.jpg'
               },
               {
                 name: 'סלון יוקרתי',
                 projects: 5,
-                href: '/projects/luxury-salon'
+                href: '/projects/luxury-salon',
+                thumbnail: '/api/images/luxury-salon/17.jpg'
               }
             ].map((project) => (
               <Link
@@ -69,8 +76,12 @@ export default function Home() {
                 href={project.href}
                 className="group bg-white p-6 hover:shadow-lg transition rounded-lg"
               >
-                <div className="bg-gray-100 h-64 mb-4 rounded flex items-center justify-center group-hover:bg-gray-200 transition">
-                  <span className="text-gray-400">תמונה</span>
+                <div className="h-64 mb-4 rounded overflow-hidden">
+                  <img
+                    src={project.thumbnail}
+                    alt={project.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
                 </div>
                 <h3 className="text-lg font-light mb-2">{project.name}</h3>
                 <p className="text-sm text-gray-600">{project.projects} תמונות</p>

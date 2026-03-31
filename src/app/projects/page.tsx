@@ -6,6 +6,13 @@ export const metadata = {
   description: 'צפו בפרויקטים של אילה כהן - עיצוב וארכיטקטורה יוקרתיים',
 }
 
+const projectThumbnails: Record<string, string> = {
+  'mevo-choron': '/api/images/mevo-choron/11.jpg',
+  'penthouse-jerusalem': '/api/images/penthouse-jerusalem/18.jpg',
+  'luxury-salon': '/api/images/luxury-salon/17.jpg',
+  'luxury-kitchen': '/api/images/luxury-kitchen/100.jpeg',
+}
+
 export default function ProjectsPage() {
   return (
     <div className="pt-32 pb-20 px-4">
@@ -27,9 +34,13 @@ export default function ProjectsPage() {
               className="group"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 hover:opacity-80 transition">
-                {/* Image Placeholder */}
-                <div className="bg-secondary h-96 rounded-lg flex items-center justify-center group-hover:bg-gray-300 transition order-2 md:order-1">
-                  <span className="text-gray-400">תמונה</span>
+                {/* Project Image */}
+                <div className="h-96 rounded-lg overflow-hidden order-2 md:order-1">
+                  <img
+                    src={projectThumbnails[project.id]}
+                    alt={project.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
                 </div>
 
                 {/* Text Content */}
