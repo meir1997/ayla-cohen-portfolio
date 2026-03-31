@@ -10,8 +10,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-light tracking-wider text-dark">
-          AC
+        <Link href="/">
+          <img src="/logo.jpg" alt="אילה כהן" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Menu */}

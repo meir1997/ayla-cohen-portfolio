@@ -56,7 +56,7 @@ export default function Home() {
                 name: 'בית במבוא חורון',
                 projects: 37,
                 href: '/projects/mevo-choron',
-                thumbnail: '/api/images/mevo-choron/11.jpg'
+                thumbnail: '/api/images/mevo-choron/14.jpg'
               },
               {
                 name: 'פנטהאוז בירושלים',
