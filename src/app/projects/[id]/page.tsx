@@ -1,4 +1,4 @@
-import { getProjectById } from '@/lib/projects'
+import { getProjectById, projects as allProjects } from '@/lib/projects'
 import { getProjectImages } from '@/lib/image-loader'
 import Gallery from '@/components/Gallery'
 import Link from 'next/link'
@@ -11,7 +11,6 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
-  const projects = getProjectById('') // This won't work, need to adjust
   return [
     { id: 'mevo-choron' },
     { id: 'penthouse-jerusalem' },
@@ -21,8 +20,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps) {
-  const projectsData = require('@/lib/projects').projects
-  const project = projectsData.find((p: any) => p.id === params.id)
+  const project = allProjects.find((p) => p.id === params.id)
 
   if (!project) {
     return {
@@ -37,8 +35,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const projectsData = require('@/lib/projects').projects
-  const project = projectsData.find((p: any) => p.id === params.id)
+  const project = allProjects.find((p) => p.id === params.id)
 
   if (!project) {
     notFound()
