@@ -1,4 +1,4 @@
-import { getProjectById, projects as allProjects } from '@/lib/projects'
+import { projects as allProjects } from '@/lib/projects'
 import { getProjectImages } from '@/lib/image-loader'
 import Gallery from '@/components/Gallery'
 import Link from 'next/link'
