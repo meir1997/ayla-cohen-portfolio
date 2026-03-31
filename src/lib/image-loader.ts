@@ -36,8 +36,8 @@ export function getProjectImages(): ProjectImages[] {
     },
   ]
 
-  // Only try to read files at runtime, not during build
-  if (typeof process !== 'undefined' && process.env.NODE_ENV !== 'production' || process.cwd().includes('node_modules')) {
+  // Try to read files at runtime
+  if (typeof process !== 'undefined' && !process.cwd().includes('node_modules')) {
     try {
       const portfolioPath = path.join(process.cwd(), 'portfolio_images', 'numbered')
 
@@ -75,7 +75,7 @@ export function getProjectImages(): ProjectImages[] {
         }
       }
     } catch (error) {
-      // Silently fail during build - use hardcoded counts
+      // Silently fail - use hardcoded counts
     }
   }
 
