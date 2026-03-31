@@ -11,7 +11,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/">
-          <img src="/logo.jpg" alt="אילה כהן" className="h-12 w-auto" />
+          <img src="/logo.jpg" alt="אילה כהן" className="h-20 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
