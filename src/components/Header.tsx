@@ -16,14 +16,14 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
-          <Link href="/" className="text-sm hover:opacity-60 transition">
-            בית
+          <Link href="/about" className="text-sm hover:opacity-60 transition">
+            מי אני
           </Link>
           <Link href="/projects" className="text-sm hover:opacity-60 transition">
             פרויקטים
           </Link>
-          <Link href="/about" className="text-sm hover:opacity-60 transition">
-            אודות
+          <Link href="/" className="text-sm hover:opacity-60 transition">
+            בית
           </Link>
           <Link href="/contact" className="text-sm hover:opacity-60 transition">
             יצירת קשר
@@ -46,14 +46,14 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <div className="px-4 py-4 space-y-4">
-            <Link href="/" className="block text-sm hover:opacity-60 transition">
-              בית
+            <Link href="/about" className="block text-sm hover:opacity-60 transition">
+              מי אני
             </Link>
             <Link href="/projects" className="block text-sm hover:opacity-60 transition">
               פרויקטים
             </Link>
-            <Link href="/about" className="block text-sm hover:opacity-60 transition">
-              אודות
+            <Link href="/" className="block text-sm hover:opacity-60 transition">
+              בית
             </Link>
             <Link href="/contact" className="block text-sm hover:opacity-60 transition">
               יצירת קשר

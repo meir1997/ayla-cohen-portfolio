@@ -20,7 +20,7 @@ export default function AboutPage() {
 
           {/* Text Content */}
           <div className="order-1 md:order-2 space-y-6">
-            <h1 className="text-4xl md:text-5xl font-light mb-8">אודות</h1>
+            <h1 className="text-4xl md:text-5xl font-light mb-8">מי אני</h1>
 
             <p className="text-lg text-gray-600 leading-relaxed">
               בית הוא המקום בו מגשימים חלומות, הוא מלווה אותנו מידי יום בכל החוויות השגרתיות והאירועים המרגשים. כשהבית מתוכנן כראוי הוא יכול להכיל את כל הדברים החשובים לנו מבלי להתפשר על פרקטיקה, פונקציונליות ונוחות.
