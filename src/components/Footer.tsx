@@ -19,7 +19,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li><a href="/" className="hover:text-white transition">בית</a></li>
               <li><a href="/projects" className="hover:text-white transition">פרויקטים</a></li>
-              <li><a href="/about" className="hover:text-white transition">אודות</a></li>
+              <li><a href="/about" className="hover:text-white transition">מי אני</a></li>
             </ul>
           </div>
 
@@ -27,9 +27,9 @@ export default function Footer() {
           <div>
             <h4 className="font-light mb-4">עקבו אחרינו</h4>
             <div className="flex gap-4 text-gray-400">
-              <a href="#" className="hover:text-white transition">Instagram</a>
-              <a href="#" className="hover:text-white transition">WhatsApp</a>
-              <a href="#" className="hover:text-white transition">Facebook</a>
+              <a href="https://www.instagram.com/ayalacohen.design/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Instagram</a>
+              <a href="https://api.whatsapp.com/send?phone=972507374292&text=%D7%A9%D7%9C%D7%95%D7%9D+%D7%90%D7%99%D7%9C%D7%94,+%D7%90%D7%A0%D7%99+%D7%A4%D7%95%D7%A0%D7%94+%D7%90%D7%9C%D7%99%D7%9A+%D7%93%D7%A8%D7%9A+%D7%94%D7%90%D7%AA%D7%A8+,+%D7%AA%D7%97%D7%96%D7%A8%D7%99+%D7%90%D7%9C%D7%99+%D7%91%D7%91%D7%A7%D7%A9%D7%94+" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">WhatsApp</a>
+              <a href="https://www.facebook.com/profile.php?id=100089356337105" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Facebook</a>
             </div>
           </div>
         </div>
