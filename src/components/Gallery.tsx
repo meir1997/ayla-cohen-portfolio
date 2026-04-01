@@ -92,7 +92,7 @@ export default function Gallery({ images, projectId, projectName }: GalleryProps
       <div className="space-y-8">
         <div>
           <h2 className="text-3xl md:text-4xl font-light mb-2">{projectName}</h2>
-          <p className="text-gray-600">{images.length} תמונות</p>
+          <p className="hidden md:block text-gray-600">{images.length} תמונות</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
