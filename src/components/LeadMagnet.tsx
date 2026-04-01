@@ -29,8 +29,8 @@ export default function LeadMagnet() {
     <section className="py-20 px-4 bg-[#F5F5F0]">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" dir="rtl">
-          {/* Marketing text */}
-          <div className="space-y-6 text-right md:col-start-2">
+          {/* Marketing text - appears on right in RTL */}
+          <div className="space-y-6 text-right order-2">
             <div className="inline-block bg-dark text-white text-xs px-3 py-1 rounded tracking-widest">
               מתנה
             </div>
@@ -58,8 +58,8 @@ export default function LeadMagnet() {
             </ul>
           </div>
 
-          {/* Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 md:col-start-1 md:row-start-1 md:text-right">
+          {/* Form - appears on left in RTL */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 order-1">
             {!submitted ? (
               <>
                 <h3 className="text-xl font-light mb-2 text-right">קבלו את המדריך במתנה</h3>
