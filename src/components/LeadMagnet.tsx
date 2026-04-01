@@ -43,7 +43,7 @@ export default function LeadMagnet() {
               תגלו איך לבחור סגנון עיצוב שמתאים לכם, מה עושה חלל להרגיש יוקרתי,
               ואיך להימנע מהטעויות הנפוצות שעולות ביוקר.
             </p>
-            <ul className="space-y-2 text-gray-600 text-sm">
+            <ul className="space-y-2 text-gray-600 text-sm text-right">
               {[
                 'איך בוחרים פלטת צבעים שתעמוד במבחן הזמן',
                 'הסודות מאחורי חלל שמרגיש מרווח ומאוורר',
