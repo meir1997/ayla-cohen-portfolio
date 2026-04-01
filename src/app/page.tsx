@@ -98,8 +98,7 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 </div>
-                <h3 className="text-lg font-light mb-2">{project.name}</h3>
-                <p className="text-sm text-gray-600">{project.projects} תמונות</p>
+                <h3 className="text-lg font-light">{project.name}</h3>
               </Link>
             ))}
           </div>
