@@ -23,19 +23,19 @@ export default function Home() {
                 מי אני
               </h1>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed text-justify">
                 בית הוא המקום בו מגשימים חלומות, הוא מלווה אותנו מידי יום בכל החוויות השגרתיות והאירועים המרגשים. כשהבית מתוכנן כראוי הוא יכול להכיל את כל הדברים החשובים לנו מבלי להתפשר על פרקטיקה, פונקציונליות ונוחות.
               </p>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed text-justify">
                 כשנכנס העיצוב לתמונה - התוצאה מדברת בעד עצמה.
               </p>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed text-justify">
                 מגיל צעיר מאד הבנתי שהאדריכלות והעיצוב הם חלק מחיי. אני זוכרת את עצמי כבר מגיל צעיר מאד משרטטת בעיפרון בתים וצובעת לפי סוגי החומרים. בגיל 15 החלטתי להיחשף לעולם הזה בצורה מקצועית במסגרת מגמת אדריכלות בתיכון ומאז הכול היסטוריה...
               </p>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed text-justify">
                 הסטודיו שלי מתמחה בתכנון אדריכלי ועיצוב פנים הן במגזר הפרטי והן במסחרי. אני מלווה את לקוחותי כבר מרכישת הנכס והבנת הצרכים הספציפיים, תוך תכנון אדריכלי מוקפד וניסיון עיצובי עשיר.
               </p>
 
