@@ -5,19 +5,20 @@ import { useState } from 'react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const close = () => setIsMenuOpen(false)
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" onClick={close}>
           <img src="/logo.jpg" alt="אילה כהן" className="h-20 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
           <Link href="/" className="text-sm hover:opacity-60 transition">
-            מי אני
+            בית
           </Link>
           <Link href="/projects" className="text-sm hover:opacity-60 transition">
             פרויקטים
@@ -43,13 +44,13 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <div className="px-4 py-4 space-y-4">
-            <Link href="/" className="block text-sm hover:opacity-60 transition">
-              מי אני
+            <Link href="/" onClick={close} className="block text-sm hover:opacity-60 transition">
+              בית
             </Link>
-            <Link href="/projects" className="block text-sm hover:opacity-60 transition">
+            <Link href="/projects" onClick={close} className="block text-sm hover:opacity-60 transition">
               פרויקטים
             </Link>
-            <Link href="/contact" className="block text-sm hover:opacity-60 transition">
+            <Link href="/contact" onClick={close} className="block text-sm hover:opacity-60 transition">
               יצירת קשר
             </Link>
           </div>
