@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
@@ -68,7 +69,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: 'בית במבוא חורון',
+                name: 'בית ביישוב',
                 projects: 37,
                 href: '/projects/mevo-choron',
                 thumbnail: '/api/images/mevo-choron/14.jpg'
@@ -113,6 +114,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Testimonials />
     </>
   )
 }

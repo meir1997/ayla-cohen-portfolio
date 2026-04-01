@@ -11,7 +11,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'mevo-choron',
-    name: 'בית במבוא חורון',
+    name: 'בית ביישוב',
     description: 'בית משפחתי יוקרתי עם עיצוב מודרני וכיווני אדריכלי עדכני',
     images: 37,
     category: 'residential',
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   },
   {
     id: 'luxury-kitchen',
-    name: 'מטבח יוקרתי',
+    name: 'מטבח חלומות',
     description: 'מטבח מעוצב בטכנולוגיה מתקדמת וחומרים פרימיום',
     images: 14,
     category: 'kitchen',
