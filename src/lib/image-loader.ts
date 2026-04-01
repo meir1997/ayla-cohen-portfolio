@@ -65,14 +65,7 @@ export function getProjectImages(): ProjectImages[] {
           .sort((a, b) => {
             const aNum = parseInt(a.split('.')[0])
             const bNum = parseInt(b.split('.')[0])
-            // Last digit = room number, first digit(s) = sequence within room
-            // Single digit (e.g. "3") = room 3, first image (seq 0)
-            const aRoom = aNum < 10 ? aNum : aNum % 10
-            const bRoom = bNum < 10 ? bNum : bNum % 10
-            if (aRoom !== bRoom) return aRoom - bRoom
-            const aSeq = aNum < 10 ? 0 : Math.floor(aNum / 10)
-            const bSeq = bNum < 10 ? 0 : Math.floor(bNum / 10)
-            return aSeq - bSeq
+            return aNum - bNum
           })
 
         const projectIndex = projects.findIndex(p => p.projectId === projectId)

@@ -20,7 +20,7 @@ export default function Home() {
                 name: 'בית ביישוב',
                 projects: 37,
                 href: '/projects/mevo-choron',
-                thumbnail: '/api/images/mevo-choron/14.jpg'
+                thumbnail: '/api/images/mevo-choron/14.webp'
               },
               {
                 name: 'פנטהאוז בירושלים',

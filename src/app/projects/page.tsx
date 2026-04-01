@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 const projectThumbnails: Record<string, string> = {
-  'mevo-choron': '/api/images/mevo-choron/14.jpg',
+  'mevo-choron': '/api/images/mevo-choron/14.webp',
   'penthouse-jerusalem': '/api/images/penthouse-jerusalem/18.jpg',
   'luxury-salon': '/api/images/luxury-salon/17.jpg',
   'luxury-kitchen': '/api/images/luxury-kitchen/100.jpeg',
