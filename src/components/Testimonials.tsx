@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const testimonials = [
   {
@@ -104,6 +104,7 @@ function NavButtons({
 export default function Testimonials() {
   const [isMobile, setIsMobile] = useState(false)
   const [page, setPage] = useState(0)
+  const touchStartX = useRef<number | null>(null)
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -120,6 +121,16 @@ export default function Testimonials() {
   const prev = () => setPage(p => Math.max(0, p - 1))
   const next = () => setPage(p => Math.min(totalPages - 1, p + 1))
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev()
+    touchStartX.current = null
+  }
+
   return (
     <section className="py-24 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -127,7 +138,11 @@ export default function Testimonials() {
           מה אומרים הלקוחות
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[280px]">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[280px]"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
           {visible.map((t) => (
             <TestimonialCard key={t.name} t={t} />
           ))}
