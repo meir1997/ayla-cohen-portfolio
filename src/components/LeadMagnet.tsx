@@ -8,15 +8,21 @@ export default function LeadMagnet() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!name.trim() || !phone.trim()) return
     setLoading(true)
-    // Simulate a brief delay then reveal download
-    setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
-    }, 600)
+    try {
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone }),
+      })
+    } catch {
+      // Show download regardless
+    }
+    setLoading(false)
+    setSubmitted(true)
   }
 
   return (
@@ -26,7 +32,7 @@ export default function LeadMagnet() {
           {/* Marketing text */}
           <div className="space-y-6 text-right">
             <div className="inline-block bg-dark text-white text-xs px-3 py-1 rounded tracking-widest">
-              מדריך חינמי
+              מתנה
             </div>
             <h2 className="text-3xl md:text-4xl font-light leading-snug">
               המדריך המלא<br />
@@ -56,7 +62,7 @@ export default function LeadMagnet() {
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
             {!submitted ? (
               <>
-                <h3 className="text-xl font-light mb-2 text-right">קבלו את המדריך בחינם</h3>
+                <h3 className="text-xl font-light mb-2 text-right">קבלו את המדריך במתנה</h3>
                 <p className="text-sm text-gray-500 mb-6 text-right">
                   השאירו פרטים ונשלח לכם ישירות
                 </p>
