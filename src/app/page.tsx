@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Testimonials from '@/components/Testimonials'
 import HeroSection from '@/components/HeroSection'
+import LeadMagnet from '@/components/LeadMagnet'
 
 export default function Home() {
   return (
@@ -63,6 +64,7 @@ export default function Home() {
         </div>
       </section>
       <Testimonials />
+      <LeadMagnet />
     </>
   )
 }
