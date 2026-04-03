@@ -43,14 +43,14 @@ export default function LeadMagnet() {
               תגלו איך לבחור סגנון עיצוב שמתאים לכם, מה עושה חלל להרגיש יוקרתי,
               ואיך להימנע מהטעויות הנפוצות שעולות ביוקר.
             </p>
-            <ul className="space-y-2 text-gray-600 text-sm text-right">
+            <ul className="space-y-2 text-gray-600 text-sm">
               {[
                 'איך בוחרים פלטת צבעים שתעמוד במבחן הזמן',
                 'הסודות מאחורי חלל שמרגיש מרווח ומאוורר',
                 'חומרים ומרקמים – מה עובד ומה לא',
                 'כיצד לשלב אסתטיקה עם פונקציונליות',
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2 flex-row-reverse">
+                <li key={item} className="flex items-start gap-2">
                   <span className="text-dark mt-0.5">✓</span>
                   <span>{item}</span>
                 </li>
