@@ -47,7 +47,7 @@ export default function Home() {
         {/* Logo */}
         <div className="mb-8 md:mb-10">
           <img
-            src="/logo.png"
+            src="/logo.jpg"
             alt="אילה כהן"
             className="h-32 md:h-44 w-auto object-contain"
           />
