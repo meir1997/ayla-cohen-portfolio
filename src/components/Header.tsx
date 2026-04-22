@@ -23,6 +23,9 @@ export default function Header() {
           <Link href="/projects" className="text-sm hover:opacity-60 transition">
             פרויקטים
           </Link>
+          <Link href="/blog" className="text-sm hover:opacity-60 transition">
+            בלוג
+          </Link>
           <Link href="/contact" className="text-sm hover:opacity-60 transition">
             יצירת קשר
           </Link>
@@ -49,6 +52,9 @@ export default function Header() {
             </Link>
             <Link href="/projects" onClick={close} className="block text-sm hover:opacity-60 transition">
               פרויקטים
+            </Link>
+            <Link href="/blog" onClick={close} className="block text-sm hover:opacity-60 transition">
+              בלוג
             </Link>
             <Link href="/contact" onClick={close} className="block text-sm hover:opacity-60 transition">
               יצירת קשר

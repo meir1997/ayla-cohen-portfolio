@@ -19,6 +19,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li><a href="/" className="hover:text-white transition">בית</a></li>
               <li><a href="/projects" className="hover:text-white transition">פרויקטים</a></li>
+              <li><a href="/blog" className="hover:text-white transition">בלוג</a></li>
               <li><a href="/about" className="hover:text-white transition">מי אני</a></li>
             </ul>
           </div>

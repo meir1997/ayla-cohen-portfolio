@@ -64,7 +64,7 @@ export default function Home() {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex items-center gap-4 md:gap-8 text-sm md:text-base tracking-[0.15em]">
+        <nav className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base tracking-[0.15em]">
           <Link
             href="/projects"
             className="text-dark hover:opacity-50 transition-opacity duration-300"
@@ -77,6 +77,13 @@ export default function Home() {
             className="text-dark hover:opacity-50 transition-opacity duration-300"
           >
             מי אני
+          </Link>
+          <span className="text-gray-300">|</span>
+          <Link
+            href="/blog"
+            className="text-dark hover:opacity-50 transition-opacity duration-300"
+          >
+            בלוג
           </Link>
           <span className="text-gray-300">|</span>
           <Link
