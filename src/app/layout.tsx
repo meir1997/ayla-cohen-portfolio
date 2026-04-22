@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import ConditionalLayout from '@/components/ConditionalLayout'
 
 export const metadata: Metadata = {
   title: 'אילה כהן - עיצוב וארכיטקטורה',
@@ -26,11 +25,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   )
