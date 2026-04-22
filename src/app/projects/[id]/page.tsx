@@ -68,9 +68,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
             <div className="text-right">
               <div className="text-sm text-gray-500">{project.year}</div>
-              <div className="text-lg font-light">
-                {projectImages?.count || project.images} תמונות
-              </div>
             </div>
           </div>
 

@@ -7,7 +7,7 @@ export default function Home() {
       {/* Social Icons - Top Left (RTL) */}
       <div className="absolute top-6 left-6 md:top-8 md:left-8 flex gap-3 z-10">
         <a
-          href="https://wa.me/972000000000"
+          href="https://wa.me/972507374292"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"

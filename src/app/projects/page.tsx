@@ -45,18 +45,13 @@ export default function ProjectsPage() {
 
                 {/* Text Content */}
                 <div className="space-y-4 order-1 md:order-2">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h2 className="text-3xl md:text-4xl font-light mb-2">
-                        {project.name}
-                      </h2>
-                      <p className="text-gray-600 mb-4">
-                        {project.description}
-                      </p>
-                    </div>
-                    <span className="text-sm bg-dark text-white px-3 py-1 rounded whitespace-nowrap">
-                      {project.images} תמונות
-                    </span>
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-light mb-2">
+                      {project.name}
+                    </h2>
+                    <p className="text-gray-600 mb-4">
+                      {project.description}
+                    </p>
                   </div>
 
                   <div className="flex gap-4">
