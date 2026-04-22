@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-01',
     readTime: '6 דק׳ קריאה',
     category: 'תכנון',
-    coverImage: '/api/images/luxury-salon/17.jpg',
+    coverImage: '/api/images/mevo-choron/5.webp',
     content: `
 <p class="lead">שיפוץ הוא אחת ההחלטות הכלכליות הגדולות של החיים - ובכל זאת, רוב האנשים ניגשים אליו ללא תכנון מסודר. בפוסט הזה אני אחלוק איתכם את חמשת השלבים שאני עושה עם כל לקוח חדש, עוד לפני שמרימים את הפטיש הראשון.</p>
 
@@ -239,7 +239,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-15',
     readTime: '7 דק׳ קריאה',
     category: 'בירוקרטיה',
-    coverImage: '/api/images/luxury-kitchen/100.jpeg',
+    coverImage: '/api/images/mevo-choron/11.webp',
     content: `
 <p class="lead">היתר בנייה הוא אחד הנושאים שהכי מבלבלים ומלחיצים לקוחות. מי שלא עבר את זה, לא מאמין כמה בירוקרטיה וזמן זה דורש. בפוסט הזה אעשה לכם סדר - מה זה, מתי חייבים, וכמה זמן זה באמת לוקח.</p>
 
@@ -332,7 +332,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-20',
     readTime: '6 דק׳ קריאה',
     category: 'סגנונות עיצוב',
-    coverImage: '/api/images/penthouse-jerusalem/18.jpg',
+    coverImage: '/api/images/luxury-salon/17.jpg',
     content: `
 <p class="lead">אחת השאלות הראשונות שאני שואלת לקוח חדש היא: "איזה סגנון עיצוב מדבר אליך?" רוב האנשים לא באמת יודעים, או מערבבים בין סגנונות שונים. בפוסט הזה אעשה לכם סדר בשבעת הסגנונות המרכזיים.</p>
 
@@ -429,7 +429,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-25',
     readTime: '6 דק׳ קריאה',
     category: 'צבעים ועיצוב',
-    coverImage: '/api/images/mevo-choron/3.webp',
+    coverImage: '/api/images/penthouse-jerusalem/22.jpg',
     content: `
 <p class="lead">הבחירה של הצבעים בבית היא אחת ההחלטות המשפיעות ביותר על תחושת החלל. צבע נכון יגרום לכם להרגיש רגועים, אנרגטיים או יצירתיים. צבע שגוי - יעייף אתכם מידי יום. בואו נבחר נכון.</p>
 
@@ -519,7 +519,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-30',
     readTime: '5 דק׳ קריאה',
     category: 'חומרים',
-    coverImage: '/api/images/luxury-salon/17.jpg',
+    coverImage: '/api/images/mevo-choron/21.webp',
     content: `
 <p class="lead">הריצוף הוא ההחלטה הכי חשובה בשיפוץ - הוא תופס את השטח הגדול ביותר בבית, הוא קבוע לשנים רבות, והחלפה שלו היא כאב ראש רציני. בואו נעשה סדר בשלוש האופציות המרכזיות.</p>
 
@@ -659,7 +659,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-05-05',
     readTime: '6 דק׳ קריאה',
     category: 'מטבחים',
-    coverImage: '/api/images/luxury-kitchen/100.jpeg',
+    coverImage: '/api/images/luxury-kitchen/88.jpeg',
     content: `
 <p class="lead">המטבח הוא המקום הכי פונקציונלי בבית - ולכן תכנון לא נכון שלו משפיע עליכם יום-יום. אחרי עשרות מטבחים שתכננתי, יש לי מתכון בדוק שעובד בכל פרויקט. הנה הוא.</p>
 
@@ -777,7 +777,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-05-10',
     readTime: '5 דק׳ קריאה',
     category: 'מטבחים',
-    coverImage: '/api/images/luxury-kitchen/100.jpeg',
+    coverImage: '/api/images/luxury-kitchen/95.jpeg',
     content: `
 <p class="lead">זו אחת ההתלבטויות הכי נפוצות בפרויקט מטבח: האם לעבוד עם נגר פרטי או עם חברת מטבחים? לכל אפשרות יש יתרונות וחסרונות, והבחירה תלויה בצרכים האישיים שלכם. בואו נעשה סדר.</p>
 
@@ -884,7 +884,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-05-15',
     readTime: '5 דק׳ קריאה',
     category: 'עיצוב',
-    coverImage: '/api/images/luxury-salon/17.jpg',
+    coverImage: '/api/images/penthouse-jerusalem/42.jpg',
     content: `
 <p class="lead">אחת התופעות שאני רואה הכי הרבה: לקוח משקיע מאות אלפי שקלים בשיפוץ, ואחרי שהכל מוכן - הוא מרגיש שהבית "ריק". חסר משהו. הסוד הוא באקססוריז - פריטים קטנים שהופכים בית לבית.</p>
 
