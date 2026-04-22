@@ -87,6 +87,18 @@ export default function Home() {
           </Link>
         </nav>
 
+        {/* Free guide CTA */}
+        <Link
+          href="/guide"
+          className="mt-12 md:mt-16 inline-flex items-center gap-3 px-6 py-3 border border-dark text-dark text-sm tracking-[0.15em] hover:bg-dark hover:text-white transition-colors duration-300 group"
+        >
+          <span className="bg-dark text-white text-[10px] px-2 py-0.5 tracking-widest group-hover:bg-white group-hover:text-dark transition-colors">
+            מתנה
+          </span>
+          המדריך לעיצוב הבית
+          <span className="transition-transform group-hover:-translate-x-1">←</span>
+        </Link>
+
       </div>
 
       {/* Bottom footer text */}
