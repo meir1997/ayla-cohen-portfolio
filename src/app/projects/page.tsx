@@ -20,9 +20,6 @@ export default function ProjectsPage() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-light mb-4">פרויקטים</h1>
-          <p className="text-lg text-gray-600">
-            כל פרויקט מייצג אהדה לפרטים ותשומת לב למידות מדויקות
-          </p>
         </div>
 
         {/* Projects Grid */}

@@ -11,7 +11,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'mevo-choron',
-    name: 'בית ביישוב',
+    name: 'בית משפחתי מרווח במושב',
     description: 'בית משפחתי יוקרתי עם עיצוב מודרני וכיווני אדריכלי עדכני',
     images: 37,
     category: 'residential',
