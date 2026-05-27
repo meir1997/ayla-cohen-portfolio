@@ -16,7 +16,7 @@ export const projects: Project[] = [
     images: 37,
     category: 'residential',
     featured: true,
-    year: 2024,
+    year: 2022,
   },
   {
     id: 'penthouse-jerusalem',
