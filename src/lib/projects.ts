@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     id: 'mevo-choron',
     name: 'בית משפחתי מרווח במושב',
-    description: 'בית משפחתי יוקרתי עם עיצוב מודרני וכיווני אדריכלי עדכני',
+    description: 'בית פרטי דו קומתי, 300 מ"ר, סגנון עיצוב מודרני-קלאסי',
     images: 37,
     category: 'residential',
     featured: true,
