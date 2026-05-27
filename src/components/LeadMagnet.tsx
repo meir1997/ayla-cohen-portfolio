@@ -37,7 +37,7 @@ export default function LeadMagnet() {
               AYALA COHEN
             </div>
             <h2 className="text-2xl md:text-3xl font-light leading-snug">
-              אם אתם מתכננים שיפוץ או שאתם לפני קניית דירה חדשה – אל תתחילו בלי להבין את הדברים החשובים באמת!
+              אם אתם מתכננים שיפוץ או שאתם לפני קניית דירה חדשה - אל תתחילו בלי להבין את הדברים החשובים באמת!
             </h2>
             <div className="space-y-3 text-gray-700 leading-relaxed">
               <p className="font-medium">אני אילה כהן, אדריכלית ומעצבת פנים</p>
@@ -66,7 +66,7 @@ export default function LeadMagnet() {
             </div>
 
             <p className="text-gray-600 leading-relaxed">
-              המדריך ניתן במתנה – במטרה לעזור לכם לצאת לדרך רגועים, ממוקדים, ובסטייל.
+              המדריך ניתן במתנה - במטרה לעזור לכם לצאת לדרך רגועים, ממוקדים, ובסטייל.
             </p>
           </div>
 
@@ -153,7 +153,7 @@ export default function LeadMagnet() {
                   הורידו את המדריך ↓
                 </a>
                 <p className="text-xs text-gray-400">
-                  נשמח לעזור גם לכם –{' '}
+                  נשמח לעזור גם לכם -{' '}
                   <a href="/contact" className="underline hover:text-dark transition">
                     צרו קשר
                   </a>
