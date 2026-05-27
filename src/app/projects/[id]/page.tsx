@@ -87,6 +87,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             images={projectImages.images}
             projectId={params.id}
             projectName={project.name}
+            aboutText={project.aboutText}
           />
         ) : (
           <div className="text-center py-12">

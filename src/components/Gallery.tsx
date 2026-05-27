@@ -6,9 +6,10 @@ interface GalleryProps {
   images: string[]
   projectId: string
   projectName: string
+  aboutText?: string
 }
 
-export default function Gallery({ images, projectId, projectName }: GalleryProps) {
+export default function Gallery({ images, projectId, projectName, aboutText }: GalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
   const getImageUrl = (imageName: string) => {
@@ -90,9 +91,19 @@ export default function Gallery({ images, projectId, projectName }: GalleryProps
 
       {/* Gallery Grid */}
       <div className="space-y-8">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-light mb-2">{projectName}</h2>
-        </div>
+        {aboutText ? (
+          <div className="max-w-3xl text-right" dir="rtl">
+            {aboutText.split('\n\n').map((paragraph, i) => (
+              <p key={i} className="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <div>
+            <h2 className="text-3xl md:text-4xl font-light mb-2">{projectName}</h2>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((imageName, index) => (
