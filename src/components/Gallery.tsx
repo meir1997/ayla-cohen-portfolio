@@ -90,15 +90,40 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
       )}
 
       {/* Gallery Grid */}
-      <div className="space-y-8">
+      <div className="space-y-12">
         {aboutText ? (
-          <div className="max-w-3xl text-right" dir="rtl">
-            {aboutText.split('\n\n').map((paragraph, i) => (
-              <p key={i} className="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <section className="py-10 md:py-14" dir="rtl">
+            <div className="max-w-2xl mx-auto px-2">
+              {/* Section label with decorative line */}
+              <div className="flex items-center gap-4 mb-8 md:mb-10">
+                <div className="h-px w-12 md:w-16 bg-dark/40"></div>
+                <span className="text-[11px] md:text-xs tracking-[0.35em] uppercase text-gray-500 font-medium">
+                  על הפרויקט
+                </span>
+              </div>
+
+              {/* Paragraphs */}
+              <div className="space-y-6 md:space-y-7">
+                {aboutText.split('\n\n').map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className={
+                      i === 0
+                        ? 'text-xl md:text-2xl font-light leading-relaxed text-dark'
+                        : 'text-base md:text-lg leading-loose text-gray-600'
+                    }
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {/* Closing accent */}
+              <div className="mt-10 md:mt-12 flex justify-start">
+                <div className="h-px w-16 bg-dark/30"></div>
+              </div>
+            </div>
+          </section>
         ) : (
           <div>
             <h2 className="text-3xl md:text-4xl font-light mb-2">{projectName}</h2>
