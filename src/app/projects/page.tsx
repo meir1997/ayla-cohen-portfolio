@@ -7,10 +7,10 @@ export const metadata = {
 }
 
 const projectThumbnails: Record<string, string> = {
-  'mevo-choron': '/api/images/mevo-choron/3.webp',
-  'penthouse-jerusalem': '/api/images/penthouse-jerusalem/18.jpg',
-  'luxury-salon': '/api/images/luxury-salon/17.jpg',
-  'luxury-kitchen': '/api/images/luxury-kitchen/100.jpeg',
+  'mevo-choron': '/api/images/mevo-choron/5.webp',
+  'penthouse-jerusalem': '/api/images/penthouse-jerusalem/87.jpeg',
+  'luxury-salon': '/api/images/luxury-salon/1.jpg',
+  'luxury-kitchen': '/api/images/luxury-kitchen/92.jpeg',
 }
 
 export default function ProjectsPage() {
