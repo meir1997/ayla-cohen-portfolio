@@ -109,10 +109,18 @@ export default function Home() {
       </div>
 
       {/* Bottom footer text */}
-      <div className="absolute bottom-4 md:bottom-6 left-0 right-0 text-center">
+      <div className="absolute bottom-1 md:bottom-4 left-0 right-0 flex flex-col md:flex-row items-center justify-center gap-0 md:gap-5 text-center">
         <p className="text-xs text-gray-400 tracking-widest">
           © {new Date().getFullYear()} אילה כהן
         </p>
+        <a
+          href="https://meirweb.co.il/?utm_source=ayla&utm_medium=footer&utm_campaign=site_credit"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="min-h-11 inline-flex items-center text-xs text-gray-500 underline underline-offset-4 hover:text-dark transition-colors"
+        >
+          רוצים אתר שעובד בשבילכם? הכירו את מאירווב ←
+        </a>
       </div>
 
     </div>
