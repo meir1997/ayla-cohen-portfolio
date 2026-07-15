@@ -36,9 +36,17 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
-          <p className="text-center text-sm text-gray-400">
-            © {currentYear} אילה כהן. כל הזכויות שמורות.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center text-sm text-gray-400">
+            <p>© {currentYear} אילה כהן. כל הזכויות שמורות.</p>
+            <a
+              href="https://meirweb.co.il/?utm_source=ayla&utm_medium=footer&utm_campaign=site_credit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-h-11 inline-flex items-center font-medium text-gray-300 underline underline-offset-4 hover:text-white transition"
+            >
+              רוצים אתר שעובד בשבילכם? הכירו את מאירווב ←
+            </a>
+          </div>
         </div>
       </div>
     </footer>
