@@ -7,8 +7,8 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="h-dvh overflow-hidden bg-[#f3f0ea] pt-24 md:pt-28">
-      <section className="grid h-full grid-rows-[42%_58%] md:grid-cols-2 md:grid-rows-1" dir="ltr">
+    <div className="h-dvh overflow-hidden bg-white pt-24 md:pt-28">
+      <section className="grid h-full grid-rows-[42%_58%] border-t border-[#d7d7d7] md:grid-cols-2 md:grid-rows-1" dir="ltr">
         <div
           className="relative overflow-hidden bg-cover bg-center"
           style={{ backgroundImage: "url('/about-video-poster.jpg')" }}
