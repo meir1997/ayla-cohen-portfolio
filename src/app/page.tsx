@@ -5,6 +5,25 @@ export default function Home() {
   return (
     <div className="h-screen w-screen overflow-hidden bg-white flex flex-col items-center justify-center relative">
 
+      {/* Softened background video */}
+      <video
+        className="hero-background-video absolute inset-0 h-full w-full object-cover object-center"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        poster="/hero-background-poster.jpg"
+        aria-hidden="true"
+        tabIndex={-1}
+      >
+        <source src="/hero-background.mp4" type="video/mp4" />
+      </video>
+      <div
+        className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.80)_58%,rgba(255,255,255,0.70)_100%)]"
+        aria-hidden="true"
+      />
+
       {/* Social Icons - Top Left (RTL) */}
       <div className="absolute top-6 left-6 md:top-8 md:left-8 flex gap-3 z-10">
         <a
@@ -43,12 +62,12 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col items-center text-center px-4">
+      <div className="relative z-10 flex flex-col items-center text-center px-4">
 
         {/* Logo */}
         <div className="mb-8 md:mb-10">
           <img
-            src="/logo.jpg"
+            src="/logo-transparent.png"
             alt="אילה כהן"
             className="h-32 md:h-44 w-auto object-contain"
           />
@@ -61,7 +80,7 @@ export default function Home() {
           </h1>
           <TypewriterText
             text="Interior Design & Architecture"
-            className="text-sm md:text-base tracking-[0.25em] text-gray-500 uppercase"
+            className="text-sm md:text-base tracking-[0.25em] text-gray-700 uppercase"
           />
         </div>
 
@@ -99,7 +118,7 @@ export default function Home() {
         {/* Free guide CTA */}
         <Link
           href="/guide"
-          className="mt-12 md:mt-16 inline-flex items-center gap-3 px-6 py-3 border border-dark text-dark text-sm tracking-[0.15em] hover:bg-dark hover:text-white transition-colors duration-300 group"
+          className="mt-12 md:mt-16 inline-flex items-center gap-3 px-6 py-3 border border-dark bg-white/30 backdrop-blur-sm text-dark text-sm tracking-[0.15em] hover:bg-dark hover:text-white transition-colors duration-300 group"
         >
           <span className="bg-dark text-white text-[10px] px-2 py-0.5 tracking-widest group-hover:bg-white group-hover:text-dark transition-colors">
             מתנה
@@ -111,8 +130,8 @@ export default function Home() {
       </div>
 
       {/* Bottom footer text */}
-      <div className="absolute bottom-1 md:bottom-4 left-0 right-0 flex flex-col md:flex-row items-center justify-center gap-0 md:gap-5 text-center">
-        <p className="text-xs text-gray-400 tracking-widest">
+      <div className="absolute z-10 bottom-1 md:bottom-4 left-0 right-0 flex flex-col md:flex-row items-center justify-center gap-0 md:gap-5 text-center">
+        <p className="text-xs text-gray-600 tracking-widest">
           © {new Date().getFullYear()} אילה כהן
         </p>
         <a

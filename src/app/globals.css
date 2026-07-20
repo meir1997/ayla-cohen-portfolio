@@ -40,6 +40,10 @@ body {
     scroll-behavior: auto;
   }
 
+  .hero-background-video {
+    display: none;
+  }
+
   .typewriter-cursor {
     display: none;
   }
