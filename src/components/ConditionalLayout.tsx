@@ -12,9 +12,10 @@ export default function ConditionalLayout({
 }) {
   const pathname = usePathname()
   const isLanding = pathname === '/'
+  const isFullscreen = isLanding || pathname === '/about'
 
   useEffect(() => {
-    if (isLanding) {
+    if (isFullscreen) {
       document.documentElement.classList.add('overflow-hidden')
       document.body.classList.add('overflow-hidden')
     } else {
@@ -26,7 +27,7 @@ export default function ConditionalLayout({
       document.documentElement.classList.remove('overflow-hidden')
       document.body.classList.remove('overflow-hidden')
     }
-  }, [isLanding])
+  }, [isFullscreen])
 
   if (isLanding) {
     return <>{children}</>
@@ -36,7 +37,7 @@ export default function ConditionalLayout({
     <>
       <Header />
       <main>{children}</main>
-      <Footer />
+      {!isFullscreen && <Footer />}
     </>
   )
 }

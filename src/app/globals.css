@@ -44,7 +44,28 @@ body {
     display: none;
   }
 
+  .about-profile-video {
+    display: none;
+  }
+
   .typewriter-cursor {
+    display: none;
+  }
+}
+
+@media (max-height: 650px) {
+  .about-detail {
+    display: none !important;
+  }
+
+  .about-panel {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+@media (max-height: 500px) and (min-width: 768px) {
+  .about-cta {
     display: none;
   }
 }
