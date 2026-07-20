@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import TypewriterText from '@/components/TypewriterText'
 
 export default function Home() {
   return (
@@ -58,9 +59,10 @@ export default function Home() {
           <h1 className="text-2xl md:text-4xl font-light tracking-[0.3em] text-dark mb-3">
             אילה כהן
           </h1>
-          <p className="text-xs md:text-sm tracking-[0.25em] text-gray-500 uppercase">
-            Interior Design &amp; Architecture
-          </p>
+          <TypewriterText
+            text="Interior Design & Architecture"
+            className="text-xs md:text-sm tracking-[0.25em] text-gray-500 uppercase"
+          />
         </div>
 
         {/* Navigation Links */}

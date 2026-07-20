@@ -19,9 +19,29 @@ body {
   direction: rtl;
 }
 
+.typewriter-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin-left: 0.2em;
+  vertical-align: -0.1em;
+  background-color: currentColor;
+  animation: typewriter-cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes typewriter-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .typewriter-cursor {
+    display: none;
   }
 }
 
