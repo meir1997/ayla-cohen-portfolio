@@ -10,11 +10,11 @@ export default function AboutPage() {
     <div className="h-dvh overflow-hidden bg-white pt-24 md:pt-28">
       <section className="grid h-full grid-rows-[42%_58%] border-t border-[#d7d7d7] md:grid-cols-2 md:grid-rows-1" dir="ltr">
         <div
-          className="relative overflow-hidden bg-cover bg-center"
+          className="relative overflow-hidden bg-cover bg-[center_18%] md:bg-[center_38%]"
           style={{ backgroundImage: "url('/about-video-poster.jpg')" }}
         >
           <video
-            className="about-profile-video absolute inset-0 h-full w-full object-cover object-[center_38%]"
+            className="about-profile-video absolute inset-0 h-full w-full object-cover object-[center_18%] md:object-[center_38%]"
             autoPlay
             loop
             muted
