@@ -61,7 +61,7 @@ export default function Home() {
           </h1>
           <TypewriterText
             text="Interior Design & Architecture"
-            className="text-xs md:text-sm tracking-[0.25em] text-gray-500 uppercase"
+            className="text-sm md:text-base tracking-[0.25em] text-gray-500 uppercase"
           />
         </div>
 
