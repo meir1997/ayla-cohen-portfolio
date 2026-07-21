@@ -70,6 +70,14 @@ body {
   }
 }
 
+@media (max-height: 600px) {
+  .mobile-one-screen {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+}
+
 /* Blog content styles */
 .blog-content {
   font-size: 1.125rem;

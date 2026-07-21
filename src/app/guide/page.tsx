@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function GuidePage() {
   return (
-    <div className="min-h-dvh pt-24 md:pt-28">
+    <div className="mobile-one-screen h-dvh overflow-hidden pt-24 md:pt-28">
       <LeadMagnet />
     </div>
   )
