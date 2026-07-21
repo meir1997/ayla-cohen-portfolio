@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function GuidePage() {
   return (
-    <div className="pt-32 pb-12">
+    <div className="min-h-dvh pt-24 md:pt-28">
       <LeadMagnet />
     </div>
   )

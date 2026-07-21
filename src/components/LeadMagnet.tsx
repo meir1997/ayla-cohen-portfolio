@@ -28,18 +28,18 @@ export default function LeadMagnet() {
   }
 
   return (
-    <section className="py-20 px-4 bg-[#F5F5F0]">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start" dir="rtl">
+    <section className="flex min-h-[calc(100dvh-6rem)] items-center border-t border-[#d7d7d7] bg-[#f7f7f5] px-5 py-8 md:min-h-[calc(100dvh-7rem)] md:px-8 md:py-6">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12" dir="rtl">
           {/* Marketing text - appears on right in RTL */}
-          <div className="space-y-6 text-right order-1">
+          <div className="order-1 space-y-4 text-right">
             <div className="inline-block bg-dark text-white text-xs px-3 py-1 rounded tracking-widest">
               AYALA COHEN
             </div>
             <h2 className="text-2xl md:text-3xl font-light leading-snug">
               אם אתם מתכננים שיפוץ או שאתם לפני קניית דירה חדשה - אל תתחילו בלי להבין את הדברים החשובים באמת!
             </h2>
-            <div className="space-y-3 text-gray-700 leading-relaxed">
+            <div className="space-y-2 text-sm leading-relaxed text-gray-700 md:text-base">
               <p className="font-medium">אני אילה כהן, אדריכלית ומעצבת פנים</p>
               <p>מלווה משפחות בתכנון ועיצוב הבית עם שילוב של נסיון, דיוק, וסטייל עולמי.</p>
               <p>יצרתי את המדריך הזה כדי שלא תכנסו לשיפוץ או בנייה בלי סדר, ידע, ותחושת שליטה.</p>
@@ -47,7 +47,7 @@ export default function LeadMagnet() {
 
             <div>
               <h3 className="text-lg font-medium mb-3">מה תמצאו במדריך?</h3>
-              <ul className="space-y-2 text-gray-700 text-sm" dir="rtl">
+              <ul className="grid grid-cols-1 gap-x-5 gap-y-2 text-sm text-gray-700 sm:grid-cols-2" dir="rtl">
                 {[
                   'מחקר מקדים לקניית דירה',
                   'בחירת בעלי מקצוע',
@@ -71,7 +71,7 @@ export default function LeadMagnet() {
           </div>
 
           {/* Form - appears on left in RTL */}
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 order-2 md:sticky md:top-32">
+          <div className="order-2 border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
             {!submitted ? (
               <>
                 <h3 className="text-xl font-light mb-2 text-right">רוצים לקבל את המדריך למייל?</h3>
