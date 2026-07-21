@@ -13,7 +13,11 @@ export default function ConditionalLayout({
   const pathname = usePathname()
   const isLanding = pathname === '/'
   const isScrollLocked = isLanding || pathname === '/about'
-  const isImmersive = isScrollLocked || pathname === '/contact' || pathname === '/guide'
+  const isImmersive =
+    isScrollLocked ||
+    pathname === '/contact' ||
+    pathname === '/guide' ||
+    pathname === '/blog'
 
   useEffect(() => {
     if (isScrollLocked) {
