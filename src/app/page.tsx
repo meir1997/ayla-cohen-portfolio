@@ -90,9 +90,6 @@ export default function Home() {
             text="Interior Design & Architecture"
             className="text-sm md:text-base tracking-[0.25em] text-gray-100 uppercase"
           />
-          <p className="mx-auto mt-3 max-w-xl text-[11px] leading-relaxed tracking-[0.08em] text-white/90 sm:text-xs md:mt-4 md:text-sm">
-            תכנון אדריכלי ועיצוב פנים בירושלים לבתים, דירות וחללים מסחריים
-          </p>
         </div>
 
         {/* Navigation Links */}
