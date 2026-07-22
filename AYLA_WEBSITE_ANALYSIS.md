@@ -40,7 +40,7 @@ Border/Frame: Pink/Coral subtle edge
 1. **Home Styling** (סטילינג בית)
 2. **Interior Design** (עיצוב פנים)
 3. **Architectural Planning** (תכנון אדריכלי)
-4. **Building Permits** (היתרי בנייה)
+4. **Building Permits** (היתרי בנייה) — הופיע באתר הישן, אך אינו שירות שאילה מספקת ואין להציגו כשירות באתר החדש
 
 ---
 
