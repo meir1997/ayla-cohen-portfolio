@@ -23,6 +23,9 @@ export default function Header() {
           <Link href="/projects" className="inline-flex min-h-11 items-center text-lg font-medium hover:opacity-60 transition">
             פרויקטים
           </Link>
+          <Link href="/services" className="inline-flex min-h-11 items-center text-lg font-medium hover:opacity-60 transition">
+            שירותים
+          </Link>
           <Link href="/blog" className="inline-flex min-h-11 items-center text-lg font-medium hover:opacity-60 transition">
             בלוג
           </Link>
@@ -52,6 +55,9 @@ export default function Header() {
             </Link>
             <Link href="/projects" onClick={close} className="flex min-h-12 items-center text-base font-medium hover:opacity-60 transition">
               פרויקטים
+            </Link>
+            <Link href="/services" onClick={close} className="flex min-h-12 items-center text-base font-medium hover:opacity-60 transition">
+              שירותים
             </Link>
             <Link href="/blog" onClick={close} className="flex min-h-12 items-center text-base font-medium hover:opacity-60 transition">
               בלוג

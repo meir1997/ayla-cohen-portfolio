@@ -3,6 +3,8 @@ import { getProjectImages } from '@/lib/image-loader'
 import Gallery from '@/components/Gallery'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import { absoluteUrl, siteConfig } from '@/lib/site'
 
 interface ProjectPageProps {
   params: {
@@ -19,7 +21,7 @@ export async function generateStaticParams() {
   ]
 }
 
-export async function generateMetadata({ params }: ProjectPageProps) {
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const project = allProjects.find((p) => p.id === params.id)
 
   if (!project) {
@@ -29,8 +31,15 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   }
 
   return {
-    title: `${project.name} | אילה כהן`,
+    title: project.name,
     description: project.description,
+    alternates: { canonical: absoluteUrl(`/projects/${project.id}`) },
+    openGraph: {
+      title: `${project.name} | אילה כהן`,
+      description: project.description,
+      url: absoluteUrl(`/projects/${project.id}`),
+      type: 'article',
+    },
   }
 }
 
@@ -42,9 +51,23 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const projectImages = getProjectImages().find(p => p.projectId === params.id)
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: project.name,
+    description: project.description,
+    url: absoluteUrl(`/projects/${project.id}`),
+    dateCreated: String(project.year),
+    creator: {
+      '@type': 'Person',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  }
 
   return (
     <div className="pt-32 pb-20 px-4">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <div className="max-w-6xl mx-auto">
         {/* Back Button */}
         <Link
@@ -104,6 +127,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <p className="text-gray-600 mb-6">
               בואו נדבר על הרעיון שלכם
             </p>
+            <Link
+              href="/services/interior-design-jerusalem"
+              className="mr-3 inline-block px-8 py-3 border border-dark text-dark hover:bg-dark hover:text-white transition text-sm font-medium"
+            >
+              לשירותי העיצוב
+            </Link>
             <Link
               href="/contact"
               className="inline-block px-8 py-3 bg-dark text-white hover:bg-gray-800 transition text-sm font-medium"

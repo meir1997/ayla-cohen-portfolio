@@ -1,8 +1,11 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import { absoluteUrl } from '@/lib/site'
 
-export const metadata = {
-  title: 'אודות | אילה כהן',
-  description: 'הסטודיו שלנו מתמחה בתכנון אדריכלי ועיצוב פנים במגזר הפרטי ובמסחרי',
+export const metadata: Metadata = {
+  title: 'מי אני',
+  description: 'הכירו את אילה כהן, הנדסאית אדריכלות ומעצבת פנים מירושלים, ואת הגישה שמחברת בין תכנון מדויק, יופי וחיי היום־יום.',
+  alternates: { canonical: absoluteUrl('/about') },
 }
 
 export default function AboutPage() {

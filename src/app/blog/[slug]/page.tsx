@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { getPostBySlug, getAllPosts } from '@/lib/blog-posts'
+import { absoluteUrl, siteConfig } from '@/lib/site'
 
 interface BlogPostPageProps {
   params: {
@@ -12,7 +14,7 @@ export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }))
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps) {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const post = getPostBySlug(params.slug)
 
   if (!post) {
@@ -22,11 +24,14 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   return {
-    title: `${post.title} | הבלוג של אילה כהן`,
+    title: post.title,
     description: post.description,
+    alternates: { canonical: absoluteUrl(`/blog/${post.slug}`) },
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
     openGraph: {
       title: post.title,
       description: post.description,
+      url: absoluteUrl(`/blog/${post.slug}`),
       images: [post.coverImage],
       type: 'article',
       publishedTime: post.date,
@@ -48,6 +53,24 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const relatedPosts = allPosts
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 2)
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    image: absoluteUrl(post.coverImage),
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: 'he-IL',
+    mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
+    author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.url },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: { '@type': 'ImageObject', url: absoluteUrl('/logo.jpg') },
+    },
+  }
 
   function formatDate(dateStr: string) {
     const date = new Date(dateStr)
@@ -60,6 +83,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <article className="pt-32 pb-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       {/* Back link */}
       <div className="max-w-3xl mx-auto px-4 mb-8">
         <Link
@@ -105,6 +129,20 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         className="blog-content max-w-3xl mx-auto px-4"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+
+      {/* Internal links to core services */}
+      <aside className="mx-auto mt-16 max-w-3xl px-4" aria-labelledby="services-heading">
+        <div className="border-y border-gray-200 py-8">
+          <h2 id="services-heading" className="text-2xl font-light">מתכננים את הצעד הבא?</h2>
+          <p className="mt-2 text-gray-600">הכירו את שירותי הסטודיו שיכולים להפוך את הידע מהמאמר לתוכנית מעשית.</p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link href="/services/interior-design-jerusalem" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">עיצוב פנים בירושלים</Link>
+            <Link href="/services/architectural-planning" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">תכנון אדריכלי</Link>
+            <Link href="/services/renovation-guidance" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">ליווי שיפוץ</Link>
+            <Link href="/services/kitchen-design" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">תכנון מטבחים</Link>
+          </div>
+        </div>
+      </aside>
 
       {/* CTA */}
       <div className="max-w-3xl mx-auto px-4 mt-20">

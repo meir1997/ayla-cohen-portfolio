@@ -1,6 +1,10 @@
-export const metadata = {
-  title: 'יצירת קשר | אילה כהן',
-  description: 'צור קשר עם אילה כהן לפרויקט החדש שלך',
+import type { Metadata } from 'next'
+import { absoluteUrl } from '@/lib/site'
+
+export const metadata: Metadata = {
+  title: 'יצירת קשר',
+  description: 'צרו קשר עם אילה כהן לתכנון אדריכלי, עיצוב פנים וליווי שיפוץ בירושלים. טלפון, וואטסאפ, אימייל וטופס פנייה.',
+  alternates: { canonical: absoluteUrl('/contact') },
 }
 
 const inputClassName =

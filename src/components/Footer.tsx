@@ -19,8 +19,10 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li><a href="/" className="hover:text-white transition">בית</a></li>
               <li><a href="/projects" className="hover:text-white transition">פרויקטים</a></li>
+              <li><a href="/services" className="hover:text-white transition">שירותים</a></li>
               <li><a href="/blog" className="hover:text-white transition">בלוג</a></li>
               <li><a href="/about" className="hover:text-white transition">מי אני</a></li>
+              <li><a href="/contact" className="hover:text-white transition">יצירת קשר</a></li>
             </ul>
           </div>
 
@@ -38,6 +40,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center text-sm text-gray-400">
             <p>© {currentYear} אילה כהן. כל הזכויות שמורות.</p>
+            <a href="/accessibility" className="inline-flex min-h-11 items-center hover:text-white transition">הצהרת נגישות</a>
             <a
               href="https://meirweb.co.il/?utm_source=ayla&utm_medium=footer&utm_campaign=site_credit"
               target="_blank"

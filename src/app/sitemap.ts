@@ -1,44 +1,46 @@
 import { MetadataRoute } from 'next'
+import { getAllPosts } from '@/lib/blog-posts'
+import { projects } from '@/lib/projects'
+import { services } from '@/lib/services'
+import { siteConfig } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ayalacohen.co.il'
-  const projects = [
-    'mevo-choron',
-    'penthouse-jerusalem',
-    'luxury-salon',
-    'luxury-kitchen',
+  const lastModified = new Date('2026-07-22')
+  const staticPages = [
+    { path: '', changeFrequency: 'weekly' as const, priority: 1 },
+    { path: '/projects', changeFrequency: 'monthly' as const, priority: 0.9 },
+    { path: '/services', changeFrequency: 'monthly' as const, priority: 0.9 },
+    { path: '/blog', changeFrequency: 'weekly' as const, priority: 0.8 },
+    { path: '/about', changeFrequency: 'monthly' as const, priority: 0.7 },
+    { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.8 },
+    { path: '/guide', changeFrequency: 'monthly' as const, priority: 0.7 },
+    { path: '/accessibility', changeFrequency: 'yearly' as const, priority: 0.2 },
   ]
 
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    ...projects.map(project => ({
-      url: `${baseUrl}/projects/${project}`,
-      lastModified: new Date(),
+    ...staticPages.map((page) => ({
+      url: `${siteConfig.url}${page.path}`,
+      lastModified,
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+    })),
+    ...projects.map((project) => ({
+      url: `${siteConfig.url}/projects/${project.id}`,
+      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+    ...services.map((service) => ({
+      url: `${siteConfig.url}/services/${service.slug}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
-    },
+    })),
+    ...getAllPosts().map((post) => ({
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'yearly' as const,
+      priority: 0.7,
+    })),
   ]
 }

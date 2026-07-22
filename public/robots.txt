@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://ayalacohen.co.il/sitemap.xml
+Sitemap: https://www.ayalacohen.co.il/sitemap.xml

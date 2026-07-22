@@ -1,9 +1,12 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { projects } from '@/lib/projects'
+import { absoluteUrl } from '@/lib/site'
 
-export const metadata = {
-  title: 'פרויקטים | אילה כהן',
-  description: 'צפו בפרויקטים של אילה כהן - עיצוב וארכיטקטורה יוקרתיים',
+export const metadata: Metadata = {
+  title: 'פרויקטים באדריכלות ועיצוב פנים',
+  description: 'צפו בפרויקטים של אילה כהן: בתים, פנטהאוזים, מטבחים וחללי מגורים שתוכננו בשילוב של אסתטיקה, נוחות ופונקציונליות.',
+  alternates: { canonical: absoluteUrl('/projects') },
 }
 
 const projectThumbnails: Record<string, string> = {

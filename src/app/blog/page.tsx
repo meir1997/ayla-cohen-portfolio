@@ -1,9 +1,22 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { getAllPosts, type BlogPost } from '@/lib/blog-posts'
+import { absoluteUrl } from '@/lib/site'
 
-export const metadata = {
-  title: 'הבלוג | אילה כהן',
-  description: 'טיפים, מדריכים ותובנות מעולם העיצוב והאדריכלות - מאת אילה כהן',
+interface BlogPageProps {
+  searchParams?: { page?: string | string[] }
+}
+
+export function generateMetadata({ searchParams }: BlogPageProps): Metadata {
+  const pageValue = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
+  const page = Math.max(1, Number.parseInt(pageValue || '1', 10) || 1)
+  const path = page > 1 ? `/blog?page=${page}` : '/blog'
+
+  return {
+    title: page > 1 ? `הבלוג — עמוד ${page}` : 'הבלוג לעיצוב ואדריכלות',
+    description: 'טיפים, מדריכים ותשובות מעשיות על תכנון, שיפוץ, עיצוב פנים ומטבחים — מאת אילה כהן.',
+    alternates: { canonical: absoluteUrl(path) },
+  }
 }
 
 const POSTS_PER_PAGE = 5
@@ -55,11 +68,7 @@ function CompactPostCard({ post }: { post: BlogPost }) {
   )
 }
 
-export default function BlogPage({
-  searchParams,
-}: {
-  searchParams?: { page?: string | string[] }
-}) {
+export default function BlogPage({ searchParams }: BlogPageProps) {
   const posts = getAllPosts()
   const pageValue = Array.isArray(searchParams?.page)
     ? searchParams?.page[0]

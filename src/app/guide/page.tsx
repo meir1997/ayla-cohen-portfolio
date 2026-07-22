@@ -1,8 +1,11 @@
 import LeadMagnet from '@/components/LeadMagnet'
+import type { Metadata } from 'next'
+import { absoluteUrl } from '@/lib/site'
 
-export const metadata = {
-  title: 'מדריך לעיצוב הבית | אילה כהן',
+export const metadata: Metadata = {
+  title: 'המדריך לעיצוב הבית',
   description: 'הורידו במתנה את המדריך המלא לעיצוב הבית שחלמתם עליו - מאת אילה כהן',
+  alternates: { canonical: absoluteUrl('/guide') },
 }
 
 export default function GuidePage() {

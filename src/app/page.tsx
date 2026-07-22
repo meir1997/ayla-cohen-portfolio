@@ -1,5 +1,13 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import TypewriterText from '@/components/TypewriterText'
+import { absoluteUrl, siteConfig } from '@/lib/site'
+
+export const metadata: Metadata = {
+  title: 'אדריכלות ועיצוב פנים בירושלים | אילה כהן',
+  description: siteConfig.description,
+  alternates: { canonical: absoluteUrl('/') },
+}
 
 export default function Home() {
   return (
@@ -74,7 +82,7 @@ export default function Home() {
         </div>
 
         {/* Name & Tagline */}
-        <div className="mb-12 md:mb-16">
+        <div className="mb-8 md:mb-12">
           <h1 className="text-2xl md:text-4xl font-light tracking-[0.3em] text-white mb-3">
             אילה כהן
           </h1>
@@ -82,10 +90,20 @@ export default function Home() {
             text="Interior Design & Architecture"
             className="text-sm md:text-base tracking-[0.25em] text-gray-100 uppercase"
           />
+          <p className="mx-auto mt-3 max-w-xl text-[11px] leading-relaxed tracking-[0.08em] text-white/90 sm:text-xs md:mt-4 md:text-sm">
+            תכנון אדריכלי ועיצוב פנים בירושלים לבתים, דירות וחללים מסחריים
+          </p>
         </div>
 
         {/* Navigation Links */}
         <nav className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base tracking-[0.15em]">
+          <Link
+            href="/services"
+            className="text-white hover:opacity-60 transition-opacity duration-300"
+          >
+            שירותים
+          </Link>
+          <span className="text-white/40">|</span>
           <Link
             href="/projects"
             className="text-white hover:opacity-60 transition-opacity duration-300"
