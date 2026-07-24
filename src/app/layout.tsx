@@ -68,11 +68,6 @@ export default function RootLayout({
         image: absoluteUrl('/ayala-portrait.jpg'),
         telephone: siteConfig.phone,
         email: siteConfig.email,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: siteConfig.city,
-          addressCountry: 'IL',
-        },
         areaServed: {
           '@type': 'City',
           name: siteConfig.city,
