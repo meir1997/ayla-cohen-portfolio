@@ -165,7 +165,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               href={`/blog/${prevPost.slug}`}
               className="group block p-6 border border-gray-200 rounded-lg hover:border-dark transition"
             >
-              <div className="text-xs text-gray-500 mb-2">הפוסט הקודם →</div>
+              <div className="text-xs text-gray-500 mb-2">למאמר הקודם →</div>
               <div className="text-lg font-light group-hover:opacity-70 transition">
                 {prevPost.title}
               </div>
@@ -176,7 +176,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               href={`/blog/${nextPost.slug}`}
               className={`group block p-6 border border-gray-200 rounded-lg hover:border-dark transition text-left ${!prevPost ? 'md:col-start-2' : ''}`}
             >
-              <div className="text-xs text-gray-500 mb-2">← הפוסט הבא</div>
+              <div className="text-xs text-gray-500 mb-2">← למאמר הבא</div>
               <div className="text-lg font-light group-hover:opacity-70 transition">
                 {nextPost.title}
               </div>
