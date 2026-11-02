@@ -147,7 +147,7 @@ export default function LeadMagnet() {
                 </p>
                 <a
                   href="/design-guide.pdf"
-                  download="מדריך לעיצוב הבית - אילה כהן.pdf"
+                  download="מדריך לעיצוב הבית.pdf"
                   className="inline-block w-full px-8 py-3 bg-dark text-white hover:bg-gray-800 transition text-sm font-medium text-center"
                 >
                   הורידו את המדריך ↓
