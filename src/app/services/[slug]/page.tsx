@@ -76,9 +76,9 @@ export default function ServicePage({ params }: ServicePageProps) {
               <span className="text-xs tracking-[0.2em] text-[#8a7254]" aria-hidden="true">01 / SERVICES</span>
               <h2 id="suitable-title" className="mt-4 text-2xl font-light leading-snug md:text-3xl">למי השירות מתאים?</h2>
             </div>
-            <ul className="mt-8 border-t border-[#d9d5ce] md:mt-0">
+            <ul className="mt-8 md:mt-0">
               {service.suitableFor.map((item, index) => (
-                <li key={item} className="flex items-baseline gap-5 border-b border-[#e6e3de] py-5 text-base leading-relaxed text-[#383632] md:gap-8 md:py-6 md:text-lg">
+                <li key={item} className="flex items-baseline gap-5 border-b border-[#e6e3de] py-5 last:border-b-0 text-base leading-relaxed text-[#383632] md:gap-8 md:py-6 md:text-lg">
                   <span className="shrink-0 text-xs tracking-widest text-[#8a7254]" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                   <span>{item}</span>
                 </li>
