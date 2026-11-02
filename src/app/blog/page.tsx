@@ -22,7 +22,7 @@ const POSTS_PER_PAGE = 5
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
-      <div className="aspect-[4/3] overflow-hidden bg-secondary">
+      <div className="aspect-[16/9] overflow-hidden bg-secondary">
         <img src={post.coverImage} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none" />
       </div>
       <div className="pt-5">
@@ -56,14 +56,14 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
 
           {featuredPost && (
             <Link href={`/blog/${featuredPost.slug}`} className="group grid overflow-hidden bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark md:grid-cols-2">
-              <div className="aspect-[4/3] overflow-hidden md:aspect-auto md:min-h-[26rem]">
+              <div className="aspect-[16/9] overflow-hidden md:aspect-auto md:h-72 lg:h-80">
                 <img src={featuredPost.coverImage} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none" />
               </div>
-              <div className="flex flex-col justify-center px-7 py-10 sm:px-10 md:px-12 lg:px-16">
+              <div className="flex flex-col justify-center px-6 py-7 sm:px-8 md:px-10 lg:px-12">
                 <p className="text-xs tracking-wide text-[#8a7254]">מאמר נבחר <span aria-hidden="true">·</span> {featuredPost.category} <span aria-hidden="true">·</span> {featuredPost.readTime}</p>
-                <h2 className="mt-5 text-3xl font-light leading-snug md:text-4xl">{featuredPost.title}</h2>
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-[#595550]">{featuredPost.description}</p>
-                <span className="mt-8 w-fit border-b border-dark/50 pb-1 text-sm">לקריאת המאמר ←</span>
+                <h2 className="mt-4 text-2xl font-light leading-snug md:text-3xl">{featuredPost.title}</h2>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-[#595550]">{featuredPost.description}</p>
+                <span className="mt-6 w-fit border-b border-dark/50 pb-1 text-sm">לקריאת המאמר ←</span>
               </div>
             </Link>
           )}
