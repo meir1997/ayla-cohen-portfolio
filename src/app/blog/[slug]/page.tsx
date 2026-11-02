@@ -108,14 +108,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Cover Image */}
       <div className="max-w-5xl mx-auto px-4 mb-12 md:mb-16">
-        <div className="bg-secondary p-4 sm:p-6 md:p-8">
-          <div className="aspect-[16/9] max-h-[360px] max-w-4xl mx-auto overflow-hidden border border-black">
+        <div className="flex justify-center bg-[#eeeae3] p-6 sm:p-10 md:p-12">
           <img
             src={post.coverImage}
             alt={post.title}
-            className="w-full h-full object-cover"
+            className="block h-auto w-auto max-h-[min(70vh,680px)] max-w-full border border-black object-contain"
           />
-          </div>
         </div>
       </div>
 
