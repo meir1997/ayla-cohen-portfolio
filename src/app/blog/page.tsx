@@ -61,7 +61,7 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
               </div>
               <div className="flex flex-col justify-center px-6 py-7 sm:px-8 md:px-10 lg:px-12">
                 <p className="text-xs tracking-wide text-[#8a7254]">מאמר נבחר <span aria-hidden="true">·</span> {featuredPost.category} <span aria-hidden="true">·</span> {featuredPost.readTime}</p>
-                <h2 className="mt-4 text-2xl font-light leading-snug md:text-3xl">{featuredPost.title}</h2>
+                <h2 className="mt-4 text-2xl font-light leading-snug md:whitespace-nowrap md:text-[clamp(1rem,1.35vw,1.35rem)]">{featuredPost.title}</h2>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-[#595550]">{featuredPost.description}</p>
                 <span className="mt-6 w-fit border-b border-dark/50 pb-1 text-sm">לקריאת המאמר ←</span>
               </div>
