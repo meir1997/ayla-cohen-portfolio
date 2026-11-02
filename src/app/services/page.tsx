@@ -6,7 +6,7 @@ import { absoluteUrl } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'שירותי אדריכלות ועיצוב פנים בירושלים',
   description:
-    'תכנון אדריכלי, עיצוב פנים, ליווי שיפוץ ותכנון מטבחים בירושלים — שירות אישי ומדויק מאילה כהן.',
+    'תכנון אדריכלי, ליווי לעיצוב פנים, תכנון מטבחים ופגישת ייעוץ ממוקדת — שירות אישי ומדויק מאילה כהן.',
   alternates: { canonical: absoluteUrl('/services') },
   openGraph: {
     title: 'שירותי אדריכלות ועיצוב פנים | אילה כהן',
