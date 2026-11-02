@@ -48,9 +48,9 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
     <main className="min-h-screen bg-white pt-24 text-dark md:pt-28" dir="rtl">
       <div className="border-t border-dark/10">
         <div className="mx-auto max-w-7xl px-5 pb-20 sm:px-8 md:pb-28 lg:px-10">
-          <header className="py-12 md:py-16">
+          <header className="my-8 border-r-2 border-[#a18d72] bg-[#f7f6f3] px-6 py-9 sm:px-10 md:my-12 md:px-14 md:py-12">
             <p className="text-xs tracking-[0.2em] text-[#8a7254]">תכנון · עיצוב · השראה</p>
-            <h1 className="mt-4 text-4xl font-light leading-tight md:text-5xl">הבלוג</h1>
+            <h1 className="mt-4 text-3xl font-light leading-tight md:text-4xl">בלוג אדריכלות ועיצוב פנים</h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#595550] md:text-lg">רעיונות, מדריכים והשראה לתכנון ולעיצוב הבית.</p>
           </header>
 
