@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-light tracking-wider mb-4">AC</h3>
-            <p className="text-sm text-gray-400">
+            <p className="inline-block text-center text-sm text-gray-400">
               <span className="block" dir="ltr">ARCHITECTURE &amp; INTERIOR DESIGN</span>
               <span className="mt-1 block">סטודיו לתכנון אדריכלי ועיצוב פנים</span>
             </p>
