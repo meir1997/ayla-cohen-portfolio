@@ -145,7 +145,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <h3 className="text-2xl md:text-3xl font-light mb-4">
             מתכננים שיפוץ או עיצוב?
           </h3>
-          <p className="text-gray-600 mb-6 max-w-xl mx-auto">
+          <p className="text-gray-600 mb-6 mx-auto max-w-none md:text-sm lg:text-base">
             מוזמנים לפנות אלינו לשיחת ייעוץ, ונבדוק יחד מהי הדרך הנכונה להתחיל ולהגשים עבורכם את החלום.
           </p>
           <Link
