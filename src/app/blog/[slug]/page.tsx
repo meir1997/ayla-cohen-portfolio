@@ -88,7 +88,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
 
       {/* Header */}
-      <header className="max-w-3xl mx-auto px-4 mb-12">
+      <header className="max-w-5xl mx-auto px-4 mb-12">
         <div className="flex items-center gap-3 text-sm text-gray-500 mb-6">
           <span className="bg-secondary px-3 py-1 rounded">
             {post.category}
@@ -96,7 +96,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <span>·</span>
           <span>{post.readTime}</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-light leading-tight mb-6">
+        <h1 className="text-2xl font-light leading-tight mb-6 md:text-3xl lg:text-4xl">
           {post.title}
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed">
