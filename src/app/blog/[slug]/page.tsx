@@ -107,8 +107,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       </header>
 
       {/* Cover Image */}
-      <div className="max-w-4xl mx-auto px-5 mb-12 md:mb-16">
-        <div className="aspect-[16/9] max-h-[360px] overflow-hidden bg-secondary">
+      <div className="max-w-5xl mx-auto px-4 mb-12 md:mb-16">
+        <div className="aspect-[16/9] max-h-[360px] max-w-4xl ml-auto overflow-hidden bg-secondary">
           <img
             src={post.coverImage}
             alt={post.title}
@@ -119,7 +119,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Content */}
       <div
-        className="blog-content max-w-3xl mx-auto px-4"
+        className="blog-content max-w-5xl mx-auto px-4 text-right [&>*]:max-w-3xl [&>*]:ml-auto"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
