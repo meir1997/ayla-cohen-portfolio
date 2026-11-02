@@ -56,8 +56,8 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
 
           {featuredPost && (
             <Link href={`/blog/${featuredPost.slug}`} className="group grid overflow-hidden bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark md:grid-cols-2">
-              <div className="aspect-[16/9] overflow-hidden md:aspect-auto md:h-72 lg:h-80">
-                <img src={featuredPost.coverImage} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none" />
+              <div className="flex h-80 items-center justify-center overflow-hidden bg-secondary md:h-96 lg:h-[26rem]">
+                <img src={featuredPost.coverImage} alt="" className="h-full w-full object-contain" />
               </div>
               <div className="flex flex-col justify-center px-6 py-7 sm:px-8 md:px-10 lg:px-12">
                 <p className="text-xs tracking-wide text-[#8a7254]">מאמר נבחר <span aria-hidden="true">·</span> {featuredPost.category} <span aria-hidden="true">·</span> {featuredPost.readTime}</p>
