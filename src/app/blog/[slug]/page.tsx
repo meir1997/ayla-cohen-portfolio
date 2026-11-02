@@ -146,7 +146,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             מתכננים שיפוץ או עיצוב?
           </h3>
           <p className="text-gray-600 mb-6 mx-auto max-w-none md:text-sm lg:text-base">
-            מוזמנים לפנות אלינו לשיחת ייעוץ, ונבדוק יחד מהי הדרך הנכונה להתחיל ולהגשים עבורכם את החלום.
+            מוזמנים לפנות אלינו לשיחת ייעוץ, ונבדוק יחד מהי הדרך הנכונה להגשים עבורכם את החלום.
           </p>
           <Link
             href="/contact"
