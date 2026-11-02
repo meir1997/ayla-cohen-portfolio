@@ -10,59 +10,25 @@ interface BlogPageProps {
 export function generateMetadata({ searchParams }: BlogPageProps): Metadata {
   const pageValue = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
   const page = Math.max(1, Number.parseInt(pageValue || '1', 10) || 1)
-  const path = page > 1 ? `/blog?page=${page}` : '/blog'
-
   return {
     title: page > 1 ? `הבלוג — עמוד ${page}` : 'הבלוג לעיצוב ואדריכלות',
     description: 'טיפים, מדריכים ותשובות מעשיות על תכנון, שיפוץ, עיצוב פנים ומטבחים — מאת אילה כהן.',
-    alternates: { canonical: absoluteUrl(path) },
+    alternates: { canonical: absoluteUrl(page > 1 ? `/blog?page=${page}` : '/blog') },
   }
 }
 
 const POSTS_PER_PAGE = 5
 
-function ArrowIcon({ direction }: { direction: 'next' | 'previous' }) {
+function PostCard({ post }: { post: BlogPost }) {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      className="h-5 w-5"
-    >
-      <path
-        d={direction === 'next' ? 'M8 5l7 7-7 7' : 'M16 5l-7 7 7 7'}
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-function CompactPostCard({ post }: { post: BlogPost }) {
-  return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group grid min-h-0 grid-cols-[4.75rem_1fr] items-center gap-3 border-t border-dark/15 py-2 transition-colors duration-200 hover:bg-secondary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 md:block md:border md:border-dark/15 md:p-2.5"
-    >
-      <div className="h-12 overflow-hidden md:h-[clamp(4.5rem,9vh,6rem)]">
-        <img
-          src={post.coverImage}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none"
-        />
+    <Link href={`/blog/${post.slug}`} className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
+      <div className="aspect-[4/3] overflow-hidden bg-secondary">
+        <img src={post.coverImage} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none" />
       </div>
-      <div className="min-w-0 md:pt-2">
-        <div className="mb-0.5 flex items-center gap-2 text-[0.65rem] text-dark/60 md:text-xs">
-          <span>{post.category}</span>
-          <span aria-hidden="true">·</span>
-          <span>{post.readTime}</span>
-        </div>
-        <h3 className="line-clamp-2 text-sm font-normal leading-snug text-dark transition-opacity group-hover:opacity-65 md:text-base">
-          {post.title}
-        </h3>
+      <div className="pt-5">
+        <p className="text-xs tracking-wide text-[#8a7254]">{post.category} <span aria-hidden="true">·</span> {post.readTime}</p>
+        <h3 className="mt-3 text-xl font-light leading-snug text-dark transition-opacity group-hover:opacity-65 md:text-2xl">{post.title}</h3>
+        <span className="mt-4 inline-block border-b border-dark/40 pb-1 text-sm">לקריאת המאמר ←</span>
       </div>
     </Link>
   )
@@ -70,130 +36,59 @@ function CompactPostCard({ post }: { post: BlogPost }) {
 
 export default function BlogPage({ searchParams }: BlogPageProps) {
   const posts = getAllPosts()
-  const pageValue = Array.isArray(searchParams?.page)
-    ? searchParams?.page[0]
-    : searchParams?.page
+  const pageValue = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
   const requestedPage = Number.parseInt(pageValue || '1', 10)
   const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE))
-  const currentPage = Number.isFinite(requestedPage)
-    ? Math.min(Math.max(requestedPage, 1), totalPages)
-    : 1
-  const pagePosts = posts.slice(
-    (currentPage - 1) * POSTS_PER_PAGE,
-    currentPage * POSTS_PER_PAGE
-  )
+  const currentPage = Number.isFinite(requestedPage) ? Math.min(Math.max(requestedPage, 1), totalPages) : 1
+  const pagePosts = posts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE)
   const featuredPost = pagePosts[0]
   const additionalPosts = pagePosts.slice(1)
 
   return (
-    <div className="mobile-one-screen h-dvh overflow-hidden bg-primary pt-24 text-dark md:pt-28" dir="rtl">
-      <section className="h-full border-t border-dark/20 px-4 py-2 sm:px-6 md:py-4 lg:px-10">
-        <div className="mx-auto grid h-full min-h-0 max-w-7xl grid-rows-[auto_minmax(0,1fr)_auto_auto] gap-2 md:gap-3">
-          <header className="flex items-end justify-between gap-4">
-            <div>
-              <p className="text-[0.65rem] uppercase tracking-[0.22em] text-dark/55 md:text-xs">
-                תכנון · עיצוב · השראה
-              </p>
-              <h1 className="text-2xl font-light leading-none md:text-4xl">הבלוג</h1>
-            </div>
-            <p className="pb-0.5 text-xs text-dark/55 md:text-sm" aria-live="polite">
-              עמוד {currentPage} מתוך {totalPages}
-            </p>
+    <main className="min-h-screen bg-white pt-24 text-dark md:pt-28" dir="rtl">
+      <div className="border-t border-dark/10">
+        <div className="mx-auto max-w-7xl px-5 pb-20 sm:px-8 md:pb-28 lg:px-10">
+          <header className="py-12 md:py-16">
+            <p className="text-xs tracking-[0.2em] text-[#8a7254]">תכנון · עיצוב · השראה</p>
+            <h1 className="mt-4 text-4xl font-light leading-tight md:text-5xl">הבלוג</h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#595550] md:text-lg">רעיונות, מדריכים והשראה לתכנון ולעיצוב הבית.</p>
           </header>
 
           {featuredPost && (
-            <Link
-              href={`/blog/${featuredPost.slug}`}
-              className="group grid min-h-0 grid-cols-[42%_1fr] overflow-hidden bg-secondary transition-colors duration-200 hover:bg-accent/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 md:grid-cols-2"
-            >
-              <div className="min-h-0 overflow-hidden">
-                <img
-                  src={featuredPost.coverImage}
-                  alt={featuredPost.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none"
-                />
+            <Link href={`/blog/${featuredPost.slug}`} className="group grid overflow-hidden bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark md:grid-cols-2">
+              <div className="aspect-[4/3] overflow-hidden md:aspect-auto md:min-h-[26rem]">
+                <img src={featuredPost.coverImage} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none" />
               </div>
-              <div className="flex min-h-0 flex-col justify-center p-3 sm:p-4 md:p-8 lg:p-10">
-                <div className="mb-1.5 flex flex-wrap items-center gap-2 text-[0.65rem] text-dark/60 md:mb-3 md:text-sm">
-                  <span>{featuredPost.category}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{featuredPost.readTime}</span>
-                </div>
-                <h2 className="line-clamp-3 text-lg font-light leading-tight sm:text-xl md:max-w-xl md:text-3xl lg:text-4xl">
-                  {featuredPost.title}
-                </h2>
-                <p className="mt-3 hidden max-w-xl line-clamp-2 text-sm leading-relaxed text-dark/65 md:block lg:text-base">
-                  {featuredPost.description}
-                </p>
-                <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium md:mt-5 md:text-sm">
-                  לקריאת המאמר
-                  <ArrowIcon direction="previous" />
-                </span>
+              <div className="flex flex-col justify-center px-7 py-10 sm:px-10 md:px-12 lg:px-16">
+                <p className="text-xs tracking-wide text-[#8a7254]">מאמר נבחר <span aria-hidden="true">·</span> {featuredPost.category} <span aria-hidden="true">·</span> {featuredPost.readTime}</p>
+                <h2 className="mt-5 text-3xl font-light leading-snug md:text-4xl">{featuredPost.title}</h2>
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-[#595550]">{featuredPost.description}</p>
+                <span className="mt-8 w-fit border-b border-dark/50 pb-1 text-sm">לקריאת המאמר ←</span>
               </div>
             </Link>
           )}
 
-          <section aria-labelledby="additional-posts-title" className="min-h-0">
-            <div className="mb-1 flex items-center justify-between md:mb-2">
-              <h2 id="additional-posts-title" className="text-sm font-medium md:text-lg">
-                מאמרים נוספים
-              </h2>
-              <span className="text-[0.65rem] text-dark/50 md:text-xs">
-                {additionalPosts.length} מאמרים בעמוד
-              </span>
+          <section className="mt-16 md:mt-24" aria-labelledby="additional-posts-title">
+            <div className="flex items-end justify-between gap-4 border-b border-dark/15 pb-5">
+              <h2 id="additional-posts-title" className="text-2xl font-light md:text-3xl">מאמרים נוספים</h2>
+              <p className="text-sm text-dark/55">עמוד {currentPage} מתוך {totalPages}</p>
             </div>
-            <div className="grid min-h-0 grid-cols-1 md:grid-cols-4 md:gap-3">
-              {additionalPosts.map((post) => (
-                <CompactPostCard key={post.slug} post={post} />
-              ))}
+            <div className="mt-8 grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+              {additionalPosts.map((post) => <PostCard key={post.slug} post={post} />)}
             </div>
           </section>
 
-          <nav aria-label="ניווט בין עמודי הבלוג" className="flex min-h-11 items-center justify-center gap-3 border-t border-dark/15 pt-1">
-            {currentPage > 1 ? (
-              <Link
-                href={currentPage === 2 ? '/blog' : `/blog?page=${currentPage - 1}`}
-                aria-label="לעמוד הקודם"
-                className="flex h-11 min-w-11 items-center justify-center border border-dark/25 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2"
-              >
-                <ArrowIcon direction="next" />
-              </Link>
-            ) : (
-              <span className="h-11 min-w-11" aria-hidden="true" />
-            )}
-
-            <div className="flex items-center gap-2" aria-label={`עמוד ${currentPage} מתוך ${totalPages}`}>
+          {totalPages > 1 && (
+            <nav aria-label="ניווט בין עמודי הבלוג" className="mt-16 flex items-center justify-center gap-2 border-t border-dark/15 pt-8">
+              {currentPage > 1 && <Link href={currentPage === 2 ? '/blog' : `/blog?page=${currentPage - 1}`} className="inline-flex min-h-11 items-center px-3 text-sm hover:opacity-60">הקודם</Link>}
               {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                <Link
-                  key={page}
-                  href={page === 1 ? '/blog' : `/blog?page=${page}`}
-                  aria-label={`לעמוד ${page}`}
-                  aria-current={page === currentPage ? 'page' : undefined}
-                  className={`flex h-11 min-w-11 items-center justify-center text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 ${
-                    page === currentPage
-                      ? 'bg-dark text-white'
-                      : 'border border-dark/25 hover:bg-secondary'
-                  }`}
-                >
-                  {page}
-                </Link>
+                <Link key={page} href={page === 1 ? '/blog' : `/blog?page=${page}`} aria-label={`לעמוד ${page}`} aria-current={page === currentPage ? 'page' : undefined} className={`flex h-11 w-11 items-center justify-center text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-dark ${page === currentPage ? 'bg-dark text-white' : 'border border-dark/20 hover:bg-secondary'}`}>{page}</Link>
               ))}
-            </div>
-
-            {currentPage < totalPages ? (
-              <Link
-                href={`/blog?page=${currentPage + 1}`}
-                aria-label="לעמוד הבא"
-                className="flex h-11 min-w-11 items-center justify-center border border-dark/25 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2"
-              >
-                <ArrowIcon direction="previous" />
-              </Link>
-            ) : (
-              <span className="h-11 min-w-11" aria-hidden="true" />
-            )}
-          </nav>
+              {currentPage < totalPages && <Link href={`/blog?page=${currentPage + 1}`} className="inline-flex min-h-11 items-center px-3 text-sm hover:opacity-60">הבא</Link>}
+            </nav>
+          )}
         </div>
-      </section>
-    </div>
+      </div>
+    </main>
   )
 }
