@@ -53,7 +53,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <aside className="flex items-center border-t border-gray-200 bg-[#f7f7f5] px-4 py-2 sm:px-10 md:border-r md:border-t-0 md:px-10 md:py-8" aria-label="פרטי התקשרות">
+          <aside className="flex items-center border-t border-gray-200 bg-[#f7f6f3] px-4 py-2 sm:px-10 md:border-r md:border-t-0 md:px-10 md:py-8" aria-label="פרטי התקשרות">
             <div className="w-full space-y-1 md:space-y-6">
               <div>
                 <h2 className="text-base font-light md:mb-2 md:text-2xl">נדבר?</h2>
