@@ -60,7 +60,7 @@ export default function ContactPage() {
                 <p className="text-[10px] leading-tight text-gray-600 md:text-sm md:leading-relaxed">אפשר ליצור קשר בכל אחת מהדרכים הבאות.</p>
               </div>
 
-              <div className="grid grid-cols-[0.8fr_1.4fr_0.7fr] gap-2 border-y border-gray-200 py-1 md:block md:space-y-5 md:py-5">
+              <div className="grid grid-cols-[0.8fr_1.4fr] gap-2 border-y border-gray-200 py-1 md:block md:space-y-5 md:py-5">
                 <div>
                   <h3 className="text-[9px] font-medium uppercase tracking-widest text-gray-500 md:mb-1 md:text-xs">טלפון</h3>
                   <a href="tel:0507374292" className="inline-flex min-h-11 items-center text-[11px] transition hover:opacity-60 md:text-base">050-7374292</a>
@@ -68,10 +68,6 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-[9px] font-medium uppercase tracking-widest text-gray-500 md:mb-1 md:text-xs">אימייל</h3>
                   <a href="mailto:Ayalacohen.design@gmail.com" className="inline-flex min-h-11 items-center break-all text-[9px] leading-tight transition hover:opacity-60 md:text-base" dir="ltr">Ayalacohen.design@gmail.com</a>
-                </div>
-                <div>
-                  <h3 className="text-[9px] font-medium uppercase tracking-widest text-gray-500 md:mb-1 md:text-xs">עיר</h3>
-                  <p className="flex min-h-11 items-center text-[11px] md:text-base">ירושלים</p>
                 </div>
               </div>
 
