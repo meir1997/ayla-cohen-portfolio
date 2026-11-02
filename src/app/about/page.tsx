@@ -40,7 +40,7 @@ export default function AboutPage() {
               Interior Design &amp; Architecture
             </p>
             <h1 className="mb-3 text-3xl font-light leading-none tracking-tight text-[#24221f] sm:text-4xl md:mb-5 md:text-5xl lg:text-6xl">
-              מי אני
+              סטודיו AC
             </h1>
 
             <div className="space-y-2 text-[clamp(0.72rem,3.05vw,0.9rem)] leading-[1.5] text-[#595550] md:space-y-3 md:text-[clamp(0.78rem,1vw,1rem)] md:leading-[1.65]">
