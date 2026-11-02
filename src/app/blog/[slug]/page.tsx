@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getPostBySlug, getAllPosts } from '@/lib/blog-posts'
+import { services } from '@/lib/services'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
 interface BlogPostPageProps {
@@ -131,10 +132,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <h2 id="services-heading" className="text-2xl font-light">מתכננים את הצעד הבא?</h2>
           <p className="mt-2 text-gray-600">הכירו את שירותי הסטודיו שיכולים להפוך את הידע מהמאמר לתוכנית מעשית.</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/services/interior-design-jerusalem" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">עיצוב פנים בירושלים</Link>
-            <Link href="/services/architectural-planning" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">תכנון אדריכלי</Link>
-            <Link href="/services/renovation-guidance" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">פגישת ייעוץ ממוקדת</Link>
-            <Link href="/services/kitchen-design" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">תכנון מטבחים</Link>
+            {services.map((service) => (
+              <Link key={service.slug} href={`/services/${service.slug}`} className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">{service.title}</Link>
+            ))}
           </div>
         </div>
       </aside>
