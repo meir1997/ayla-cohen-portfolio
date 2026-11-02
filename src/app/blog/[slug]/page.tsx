@@ -109,7 +109,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Cover Image */}
       <div className="max-w-5xl mx-auto px-4 mb-12 md:mb-16">
         <div className="bg-secondary p-4 sm:p-6 md:p-8">
-          <div className="aspect-[16/9] max-h-[360px] max-w-4xl ml-auto overflow-hidden">
+          <div className="aspect-[16/9] max-h-[360px] max-w-4xl mx-auto overflow-hidden border border-black">
           <img
             src={post.coverImage}
             alt={post.title}
