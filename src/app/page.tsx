@@ -112,7 +112,7 @@ export default function Home() {
             href="/about"
             className="text-white hover:opacity-60 transition-opacity duration-300"
           >
-            מי אני
+            סטודיו AC
           </Link>
           <span className="text-white/40">|</span>
           <Link
