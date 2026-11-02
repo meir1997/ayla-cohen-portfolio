@@ -133,7 +133,7 @@ export default function ServicePage({ params }: ServicePageProps) {
           <div className="bg-[#f7f6f3] px-6 py-10 text-center md:px-12 md:py-14">
             <h2 className="text-3xl font-light md:text-4xl">{service.slug === 'architectural-planning' ? 'הבית שתמיד חלמתם עליו מתחיל בתכנון מדויק' : 'מתכננים פרויקט?'}</h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-gray-600">{service.slug === 'architectural-planning' ? 'מוזמנים לפנות אלינו לשיחת ייעוץ קטנה, ונבדוק יחד מהי הדרך הנכונה להתחיל ולהגשים עבורכם את החלום.' : 'ספרו לאילה על הנכס, הצרכים והחלום שלכם, ונבדוק יחד מה הדרך הנכונה להתחיל.'}</p>
-            <Link href="/contact" className="mt-7 inline-flex min-h-12 items-center bg-dark px-8 text-sm font-medium text-white transition hover:bg-black">לתיאום שיחת היכרות</Link>
+            <Link href="/contact" className="mt-7 inline-flex min-h-12 items-center bg-dark px-8 text-sm font-medium text-white transition hover:bg-black">{service.slug === 'architectural-planning' ? 'לתיאום שיחת ייעוץ והיכרות ראשונית' : 'לתיאום שיחת היכרות'}</Link>
           </div>
         </aside>
       </article>
