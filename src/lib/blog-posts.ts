@@ -886,7 +886,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-05-15',
     readTime: '5 דק׳ קריאה',
     category: 'עיצוב',
-    coverImage: '/api/images/penthouse-jerusalem/42.jpg',
+    coverImage: '/blog-accessories.jpg',
     content: `
 <p class="lead"><strong>אחת התופעות שאני רואה הכי הרבה:</strong><br />לקוח משקיע מאות אלפי שקלים בשיפוץ, ואחרי שהכול מוכן הוא מרגיש שהבית "ריק". חסר משהו.<br /><strong>הסוד הוא באקססוריז: פריטים קטנים שהופכים חלל לבית.</strong></p>
 
