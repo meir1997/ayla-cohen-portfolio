@@ -779,7 +779,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-05-10',
     readTime: '5 דק׳ קריאה',
     category: 'מטבחים',
-    coverImage: '/api/images/luxury-kitchen/95.jpeg',
+    coverImage: '/blog-kitchen-suppliers.jpg',
     content: `
 <h2>חברת מטבחים</h2>
 <h3>יתרונות</h3>
