@@ -62,8 +62,12 @@ export default function ServicePage({ params }: ServicePageProps) {
             חזרה לכל השירותים ←
           </Link>
           <p className="mt-8 text-xs font-medium uppercase tracking-[0.28em] text-[#8a7254]">סטודיו AC · אילה כהן</p>
-          <h1 className="mt-3 max-w-4xl text-4xl font-light leading-tight md:text-6xl">{service.title}</h1>
-          <p className="mt-7 max-w-3xl text-xl font-light leading-relaxed text-gray-600 md:text-2xl">{service.intro}</p>
+          <h1 className="mt-3 max-w-4xl text-3xl font-light leading-tight md:text-4xl">{service.title}</h1>
+          <div className="mt-7 max-w-4xl space-y-2 text-lg font-light leading-relaxed text-gray-600 md:text-xl">
+            {service.intro.match(/[^.!?]+[.!?]+(?:[״”])?|[^.!?]+$/g)?.map((sentence) => (
+              <p key={sentence}>{sentence.trim()}</p>
+            ))}
+          </div>
         </header>
 
         <section className="mx-auto mt-16 max-w-5xl border-y border-dark/15 px-5 py-12 md:px-8 md:py-16" aria-labelledby="suitable-title">
