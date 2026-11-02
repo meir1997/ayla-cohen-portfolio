@@ -100,15 +100,17 @@ export default function ServicePage({ params }: ServicePageProps) {
           </ol>
         </section>
 
-        <section className="mx-auto mt-16 max-w-3xl px-5 md:px-8" aria-labelledby="faq-title">
-          <h2 id="faq-title" className="text-3xl font-light">שאלות נפוצות</h2>
-          <div className="mt-7 divide-y divide-dark/15 border-y border-dark/15">
-            {service.faq.map((item) => (
-              <div key={item.question} className="py-6">
-                <h3 className="text-lg font-medium">{item.question}</h3>
-                <p className="mt-3 leading-relaxed text-gray-600">{item.answer}</p>
-              </div>
-            ))}
+        <section className="mx-auto mt-20 max-w-5xl px-5 md:px-8" aria-labelledby="faq-title">
+          <div className="bg-[#f7f6f3] px-6 py-10 sm:px-10 md:px-14 md:py-14">
+            <h2 id="faq-title" className="text-2xl font-light md:text-3xl">שאלות נפוצות</h2>
+            <div className="mt-8 grid gap-8 md:grid-cols-2 md:gap-12">
+              {service.faq.map((item) => (
+                <div key={item.question}>
+                  <h3 className="text-lg font-medium leading-snug text-[#292724]">{item.question}</h3>
+                  <p className="mt-4 max-w-md leading-relaxed text-[#595550]">{item.answer}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
