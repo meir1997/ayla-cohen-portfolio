@@ -79,7 +79,7 @@ export default function ServicePage({ params }: ServicePageProps) {
             <ul className="mt-8 md:mt-0 md:pt-7">
               {service.suitableFor.map((item) => (
                 <li key={item} className="flex items-baseline gap-5 border-b border-[#e6e3de] py-5 last:border-b-0 text-base leading-relaxed text-[#383632] md:gap-8 md:py-6 md:text-lg">
-                  <span className="mt-2 inline-block h-px w-4 shrink-0 bg-[#a18d72]" aria-hidden="true" />
+                  <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#a18d72]" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
