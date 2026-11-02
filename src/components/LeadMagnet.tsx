@@ -67,7 +67,7 @@ export default function LeadMagnet() {
             </div>
 
             <p className="text-[10px] font-medium leading-tight text-dark md:text-base md:leading-relaxed">
-              המדריך ניתן במתנה - במטרה לעזור לכם לצאת לדרך רגועים, ממוקדים, ובסטייל.
+              המדריך ניתן במתנה - במטרה לעזור לכם לצאת לדרך רגועים וממוקדים.
             </p>
           </div>
 
