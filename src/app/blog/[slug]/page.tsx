@@ -97,7 +97,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <span>{post.readTime}</span>
         </div>
         <h1 className="text-2xl font-light leading-tight mb-6 md:text-3xl lg:text-4xl">
-          {post.title}
+          {post.slug === 'accessories-and-finishing' ? (
+            <>אקססוריז<br />איך להחיות את הבית מבלי לצבוע קיר אחד</>
+          ) : post.title}
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed">
           {post.description}
