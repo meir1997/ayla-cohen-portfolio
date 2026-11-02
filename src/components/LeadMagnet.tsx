@@ -42,13 +42,13 @@ export default function LeadMagnet() {
             <div className="text-[11px] leading-tight text-gray-700 md:space-y-2 md:text-base md:leading-relaxed">
               <p className="font-medium md:hidden">אני אילה כהן, אדריכלית ומעצבת פנים. יצרתי מדריך שיעשה סדר לפני שיפוץ או בנייה.</p>
               <p className="hidden font-medium md:block">אני אילה כהן, אדריכלית ומעצבת פנים</p>
-              <p className="hidden md:block">מלווה משפחות בתכנון ועיצוב הבית עם שילוב של נסיון, דיוק, וסטייל עולמי.</p>
+              <p className="hidden md:block">מלווה משפחות בתכנון ועיצוב הבית עם שילוב של נסיון, דיוק, וסטייל.</p>
               <p className="hidden md:block">יצרתי את המדריך הזה כדי שלא תכנסו לשיפוץ או בנייה בלי סדר, ידע, ותחושת שליטה.</p>
             </div>
 
             <div>
               <h3 className="mb-1 text-sm font-medium md:mb-3 md:text-lg">מה תמצאו במדריך?</h3>
-              <ul className="grid grid-cols-2 gap-x-3 gap-y-1 text-[10px] leading-tight text-gray-700 md:gap-x-5 md:gap-y-2 md:text-sm" dir="rtl">
+              <ul className="grid grid-cols-2 items-start gap-x-4 gap-y-1.5 text-[10px] leading-snug text-gray-700 md:gap-x-8 md:gap-y-3 md:text-sm md:leading-relaxed" dir="rtl">
                 {[
                   'מחקר מקדים לקניית דירה',
                   'בחירת בעלי מקצוע',
@@ -57,8 +57,8 @@ export default function LeadMagnet() {
                   'סקירה של סגנונות עיצוב לבית',
                   'הבנה בסיסית של חומרים, תאורה, ועוד',
                   'טיפים מעשיים מתוך ליווי אישי וניסיון אמיתי בשטח',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-1 md:gap-2">
+                ].map((item, index) => (
+                  <li key={item} className={`flex items-start gap-1.5 md:gap-2 ${index === 6 ? 'col-span-2 justify-center' : ''}`}>
                     <span className="mt-0.5 shrink-0 text-[7px] text-dark md:text-sm">●</span>
                     <span>{item}</span>
                   </li>
