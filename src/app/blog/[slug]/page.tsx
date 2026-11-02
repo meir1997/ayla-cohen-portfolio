@@ -72,14 +72,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     },
   }
 
-  function formatDate(dateStr: string) {
-    const date = new Date(dateStr)
-    return date.toLocaleDateString('he-IL', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    })
-  }
 
   return (
     <article className="pt-32 pb-20">
@@ -101,7 +93,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <span className="bg-secondary px-3 py-1 rounded">
             {post.category}
           </span>
-          <span>{formatDate(post.date)}</span>
           <span>·</span>
           <span>{post.readTime}</span>
         </div>
