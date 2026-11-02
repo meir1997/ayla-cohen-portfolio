@@ -141,7 +141,6 @@ export default function LeadMagnet() {
               </>
             ) : (
               <div className="text-center space-y-6 py-4" dir="rtl">
-                <div className="text-4xl">🎉</div>
                 <h3 className="text-xl font-light">תודה, {name}!</h3>
                 <p className="text-gray-600 text-sm">
                   המדריך מוכן להורדה. לחצו על הכפתור למטה.
