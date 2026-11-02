@@ -28,7 +28,7 @@ export default function LeadMagnet() {
   }
 
   return (
-    <section className="flex h-[calc(100dvh-6rem)] items-center border-t border-[#d7d7d7] bg-[#f7f7f5] px-3 py-1 md:h-[calc(100dvh-7rem)] md:px-8 md:py-6">
+    <section className="flex min-h-[calc(100dvh-6rem)] items-center border-t border-[#d7d7d7] bg-[#f7f7f5] px-3 py-1 md:min-h-[calc(100dvh-7rem)] md:px-8 md:py-6">
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-2 md:grid-cols-2 md:gap-12" dir="rtl">
           {/* Marketing text - appears on right in RTL */}
@@ -48,7 +48,7 @@ export default function LeadMagnet() {
 
             <div>
               <h3 className="mb-1 text-sm font-medium md:mb-3 md:text-lg">מה תמצאו במדריך?</h3>
-              <ul className="grid grid-cols-2 items-start gap-x-4 gap-y-1.5 text-[10px] leading-snug text-gray-700 md:gap-x-8 md:gap-y-3 md:text-sm md:leading-relaxed" dir="rtl">
+              <ul className="grid grid-cols-1 gap-y-1 text-[10px] leading-snug text-gray-700 md:gap-y-1.5 md:text-sm md:leading-relaxed" dir="rtl">
                 {[
                   'מחקר מקדים לקניית דירה',
                   'בחירת בעלי מקצוע',
@@ -57,8 +57,8 @@ export default function LeadMagnet() {
                   'סקירה של סגנונות עיצוב לבית',
                   'הבנה בסיסית של חומרים, תאורה, ועוד',
                   'טיפים מעשיים מתוך ליווי אישי וניסיון אמיתי בשטח',
-                ].map((item, index) => (
-                  <li key={item} className={`flex items-start gap-1.5 md:gap-2 ${index === 6 ? 'col-span-2 justify-center' : ''}`}>
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-1.5 md:gap-2">
                     <span className="mt-0.5 shrink-0 text-[7px] text-dark md:text-sm">●</span>
                     <span>{item}</span>
                   </li>
@@ -66,7 +66,7 @@ export default function LeadMagnet() {
               </ul>
             </div>
 
-            <p className="text-[10px] leading-tight text-gray-600 md:text-base md:leading-relaxed">
+            <p className="text-[10px] font-medium leading-tight text-dark md:text-base md:leading-relaxed">
               המדריך ניתן במתנה - במטרה לעזור לכם לצאת לדרך רגועים, ממוקדים, ובסטייל.
             </p>
           </div>
