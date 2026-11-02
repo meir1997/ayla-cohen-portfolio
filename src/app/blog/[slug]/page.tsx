@@ -102,7 +102,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           ) : post.title}
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed">
-          {post.description}
+          {post.slug === 'accessories-and-finishing' ? (
+            <>סיימתם שיפוץ והבית מרגיש ריק וחסר חיות?<br />אקססוריז הם הסוד להפוך חלל לבית אמיתי. קראו את המדריך המלא.</>
+          ) : post.description}
         </p>
       </header>
 
