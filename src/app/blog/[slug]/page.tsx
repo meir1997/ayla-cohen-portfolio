@@ -138,7 +138,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/services/interior-design-jerusalem" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">עיצוב פנים בירושלים</Link>
             <Link href="/services/architectural-planning" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">תכנון אדריכלי</Link>
-            <Link href="/services/renovation-guidance" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">ליווי שיפוץ</Link>
+            <Link href="/services/renovation-guidance" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">פגישת ייעוץ ממוקדת</Link>
             <Link href="/services/kitchen-design" className="inline-flex min-h-11 items-center border border-dark/25 px-4 text-sm transition hover:bg-secondary">תכנון מטבחים</Link>
           </div>
         </div>
