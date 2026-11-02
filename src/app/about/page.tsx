@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { absoluteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'מי אני',
+  title: 'סטודיו AC',
   description: 'הכירו את אילה כהן, הנדסאית אדריכלות ומעצבת פנים מירושלים, ואת הגישה שמחברת בין תכנון מדויק, יופי וחיי היום־יום.',
   alternates: { canonical: absoluteUrl('/about') },
 }
