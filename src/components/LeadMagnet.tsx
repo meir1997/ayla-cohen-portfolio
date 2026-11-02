@@ -28,7 +28,7 @@ export default function LeadMagnet() {
   }
 
   return (
-    <section className="flex min-h-[calc(100dvh-6rem)] items-center border-t border-[#d7d7d7] bg-[#f7f7f5] px-3 py-1 md:min-h-[calc(100dvh-7rem)] md:px-8 md:py-6">
+    <section className="flex min-h-[calc(100dvh-6rem)] items-center border-t border-[#d7d7d7] bg-[#f7f6f3] px-3 py-1 md:min-h-[calc(100dvh-7rem)] md:px-8 md:py-6">
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-2 md:grid-cols-2 md:gap-12" dir="rtl">
           {/* Marketing text - appears on right in RTL */}
