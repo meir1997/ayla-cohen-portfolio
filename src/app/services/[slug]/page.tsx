@@ -87,7 +87,7 @@ export default function ServicePage({ params }: ServicePageProps) {
           </div>
         </section>
 
-        <section className="mx-auto mt-16 max-w-5xl px-5 md:px-8" aria-labelledby="process-title">
+        <section className="mx-auto mt-0 max-w-5xl px-5 md:px-8" aria-labelledby="process-title">
           <h2 id="process-title" className="text-3xl font-light md:text-4xl">איך נראה התהליך?</h2>
           <ol className="mt-9 grid gap-px overflow-hidden border border-dark/15 bg-dark/15 md:grid-cols-2">
             {service.process.map((step, index) => (
