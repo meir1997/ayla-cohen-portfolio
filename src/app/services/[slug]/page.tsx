@@ -61,7 +61,7 @@ export default function ServicePage({ params }: ServicePageProps) {
           <Link href="/services" className="inline-flex min-h-11 items-center text-sm text-gray-500 transition hover:text-dark">
             חזרה לכל השירותים ←
           </Link>
-          <p className="mt-8 text-xs font-medium uppercase tracking-[0.28em] text-[#8a7254]">אילה כהן · ירושלים</p>
+          <p className="mt-8 text-xs font-medium uppercase tracking-[0.28em] text-[#8a7254]">סטודיו AC · אילה כהן</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-light leading-tight md:text-6xl">{service.title}</h1>
           <p className="mt-7 max-w-3xl text-xl font-light leading-relaxed text-gray-600 md:text-2xl">{service.intro}</p>
         </header>
