@@ -21,7 +21,7 @@ export default function Footer() {
               <li><a href="/projects" className="hover:text-white transition">פרויקטים</a></li>
               <li><a href="/services" className="hover:text-white transition">שירותים</a></li>
               <li><a href="/blog" className="hover:text-white transition">בלוג</a></li>
-              <li><a href="/about" className="hover:text-white transition">מי אני</a></li>
+              <li><a href="/about" className="hover:text-white transition">סטודיו AC</a></li>
               <li><a href="/contact" className="hover:text-white transition">יצירת קשר</a></li>
             </ul>
           </div>
