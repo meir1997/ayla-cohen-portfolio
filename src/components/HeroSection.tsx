@@ -23,7 +23,7 @@ export default function HeroSection() {
           {/* Text */}
           <div className="order-2 md:order-2 space-y-6">
             <h1 className="text-4xl md:text-5xl font-light leading-tight text-dark">
-              סטודיו AC
+              מי אני
             </h1>
 
             {/* Intro — always visible */}
