@@ -70,16 +70,21 @@ export default function ServicePage({ params }: ServicePageProps) {
           </div>
         </header>
 
-        <section className="mx-auto mt-16 max-w-5xl border-y border-dark/15 px-5 py-12 md:px-8 md:py-16" aria-labelledby="suitable-title">
-          <h2 id="suitable-title" className="text-3xl font-light">למי השירות מתאים?</h2>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
-            {service.suitableFor.map((item) => (
-              <li key={item} className="flex gap-4 bg-[#f7f7f5] p-5 leading-relaxed">
-                <span className="text-[#8a7254]" aria-hidden="true">—</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <section className="mx-auto mt-16 max-w-5xl px-5 md:px-8" aria-labelledby="suitable-title">
+          <div className="border-t border-[#d9d5ce] py-12 md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-16 md:py-16">
+            <div>
+              <span className="text-xs tracking-[0.2em] text-[#8a7254]" aria-hidden="true">01 / SERVICES</span>
+              <h2 id="suitable-title" className="mt-4 text-2xl font-light leading-snug md:text-3xl">למי השירות מתאים?</h2>
+            </div>
+            <ul className="mt-8 border-t border-[#d9d5ce] md:mt-0">
+              {service.suitableFor.map((item, index) => (
+                <li key={item} className="flex items-baseline gap-5 border-b border-[#e6e3de] py-5 text-base leading-relaxed text-[#383632] md:gap-8 md:py-6 md:text-lg">
+                  <span className="shrink-0 text-xs tracking-widest text-[#8a7254]" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         <section className="mx-auto mt-16 max-w-5xl px-5 md:px-8" aria-labelledby="process-title">
