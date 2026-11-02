@@ -19,15 +19,15 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#f7f7f5] px-5 pb-20 pt-36 md:px-8 md:pt-44">
       <div className="mx-auto max-w-6xl">
-        <header className="mb-12 max-w-3xl md:mb-16">
+        <header className="mb-12 max-w-6xl md:mb-16">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-[#8a7254]">
             Interior Design &amp; Architecture
           </p>
-          <h1 className="text-4xl font-light leading-tight md:text-6xl">
+          <h1 className="text-2xl font-light leading-tight sm:text-3xl md:text-4xl">
             אדריכלות ועיצוב פנים שמתחילים בחיים עצמם
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-gray-600 md:text-xl">
-            הסטודיו של אילה כהן בירושלים מלווה בתים, דירות וחללים מסחריים
+            סטודיו AC מלווה בתים, דירות וחללים מסחריים
             משלב הבנת הצרכים והתכנון ועד לבחירות הקטנות שיוצרות חלל שלם.
           </p>
         </header>
