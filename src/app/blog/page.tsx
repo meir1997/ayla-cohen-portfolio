@@ -22,8 +22,8 @@ const POSTS_PER_PAGE = 5
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
-      <div className="bg-secondary">
-        <img src={post.coverImage} alt="" loading="lazy" className="block h-auto w-full" />
+      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-secondary">
+        <img src={post.coverImage} alt="" loading="lazy" className="block h-full w-full object-contain" />
       </div>
       <div className="pt-5">
         <p className="text-xs tracking-wide text-[#8a7254]">{post.category} <span aria-hidden="true">·</span> {post.readTime}</p>
