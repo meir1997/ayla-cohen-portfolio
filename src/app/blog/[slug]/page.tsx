@@ -107,8 +107,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Cover Image */}
       <div className="max-w-5xl mx-auto px-4 mb-12 md:mb-16">
         <div className="relative overflow-hidden bg-[#eeeae3] px-6 sm:px-10 md:px-12" dir="rtl">
-          <span className="absolute inset-x-0 top-[12%] h-px bg-black" aria-hidden="true" />
-          <span className="absolute inset-x-0 bottom-[12%] h-px bg-black" aria-hidden="true" />
+          <span className="absolute inset-x-0 inset-y-[12%] border-y border-black" aria-hidden="true" />
           <div className="relative aspect-[1206/1490] w-full md:w-1/2">
             <img
               src={post.coverImage}
