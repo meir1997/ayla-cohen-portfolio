@@ -23,7 +23,7 @@ function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
       <div className="aspect-[16/9] overflow-hidden bg-secondary">
-        <img src={post.coverImage} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none" />
+        <img src={post.coverImage} alt="" loading="lazy" className="h-full w-full object-contain" />
       </div>
       <div className="pt-5">
         <p className="text-xs tracking-wide text-[#8a7254]">{post.category} <span aria-hidden="true">·</span> {post.readTime}</p>
