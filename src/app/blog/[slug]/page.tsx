@@ -51,9 +51,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const currentIndex = allPosts.findIndex((p) => p.slug === post.slug)
   const nextPost = allPosts[currentIndex + 1]
   const prevPost = allPosts[currentIndex - 1]
-  const relatedPosts = allPosts
-    .filter((p) => p.slug !== post.slug && p.category === post.category)
-    .slice(0, 2)
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -187,37 +184,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </nav>
 
-      {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <section className="max-w-6xl mx-auto px-4 mt-20 pt-20 border-t border-gray-200">
-          <h2 className="text-2xl md:text-3xl font-light mb-10 text-center">
-            עוד בקטגוריה: {post.category}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {relatedPosts.map((relatedPost) => (
-              <Link
-                key={relatedPost.slug}
-                href={`/blog/${relatedPost.slug}`}
-                className="group block"
-              >
-                <div className="h-56 rounded-lg overflow-hidden mb-4">
-                  <img
-                    src={relatedPost.coverImage}
-                    alt={relatedPost.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                  />
-                </div>
-                <h3 className="text-xl font-light leading-snug group-hover:opacity-70 transition mb-2">
-                  {relatedPost.title}
-                </h3>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  {relatedPost.description}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+
     </article>
   )
 }
