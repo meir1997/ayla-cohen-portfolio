@@ -100,6 +100,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         <p className="text-xl text-gray-600 leading-relaxed">
           {post.slug === 'accessories-and-finishing' ? (
             <>סיימתם שיפוץ והבית מרגיש ריק וחסר חיות?<br />אקססוריז הם הסוד להפוך חלל לבית אמיתי. קראו את המדריך המלא.</>
+          ) : post.slug === 'color-palette-guide' ? (
+            <>{post.description.split('קראו את המדריך המלא לבחירה נכונה.')[0]}<br />קראו את המדריך המלא לבחירה נכונה.</>
           ) : post.description}
         </p>
       </header>
