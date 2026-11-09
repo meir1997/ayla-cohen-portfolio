@@ -4,31 +4,40 @@ import { getAllPosts, type BlogPost } from '@/lib/blog-posts'
 import { absoluteUrl } from '@/lib/site'
 
 interface BlogPageProps {
-  searchParams?: { page?: string | string[] }
+  searchParams?: { page?: string | string[]; category?: string | string[] }
 }
 
 export function generateMetadata({ searchParams }: BlogPageProps): Metadata {
-  const pageValue = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
-  const page = Math.max(1, Number.parseInt(pageValue || '1', 10) || 1)
+  const rawPage = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
+  const page = Math.max(1, Number.parseInt(rawPage || '1', 10) || 1)
   return {
-    title: page > 1 ? `הבלוג — עמוד ${page}` : 'הבלוג לעיצוב ואדריכלות',
-    description: 'טיפים, מדריכים ותשובות מעשיות על תכנון, שיפוץ, עיצוב פנים ומטבחים — מאת אילה כהן.',
+    title: page > 1 ? `בלוג אדריכלות ועיצוב פנים — עמוד ${page}` : 'בלוג אדריכלות ועיצוב פנים',
+    description: 'מדריכים והשראה לתכנון אדריכלי, עיצוב פנים, שיפוץ ומטבחים מאת אילה כהן.',
     alternates: { canonical: absoluteUrl(page > 1 ? `/blog?page=${page}` : '/blog') },
   }
 }
 
-const POSTS_PER_PAGE = 5
+const POSTS_PER_PAGE = 9
+
+function blogUrl(category: string, page = 1) {
+  const params = new URLSearchParams()
+  if (category) params.set('category', category)
+  if (page > 1) params.set('page', String(page))
+  const query = params.toString()
+  return query ? `/blog?${query}` : '/blog'
+}
 
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
-      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-secondary">
-        <img src={post.coverImage} alt="" loading="lazy" className="block h-full w-full object-contain" />
+      <div className="aspect-[4/3] overflow-hidden bg-[#f2f0ec]">
+        <img src={post.coverImage} alt="" loading="lazy" className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-90" />
       </div>
-      <div className="pt-5">
-        <p className="text-xs tracking-wide text-[#8a7254]">{post.category} <span aria-hidden="true">·</span> {post.readTime}</p>
-        <h3 className="mt-3 text-xl font-light leading-snug text-dark transition-opacity group-hover:opacity-65 md:text-2xl">{post.title}</h3>
-        <span className="mt-4 inline-block border-b border-dark/40 pb-1 text-sm">לקריאת המאמר ←</span>
+      <div className="pt-5 text-right">
+        <p className="text-[11px] tracking-wide text-[#8a7254]">{post.category} <span aria-hidden="true">·</span> {post.readTime}</p>
+        <h3 className="mt-3 text-xl font-light leading-snug text-[#24221f] md:text-2xl">{post.title}</h3>
+        <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-[#66615a]">{post.description}</p>
+        <span className="mt-5 inline-block border-b border-[#8a7254] pb-1 text-sm">לקריאת המאמר ←</span>
       </div>
     </Link>
   )
@@ -36,59 +45,60 @@ function PostCard({ post }: { post: BlogPost }) {
 
 export default function BlogPage({ searchParams }: BlogPageProps) {
   const posts = getAllPosts()
-  const pageValue = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
-  const requestedPage = Number.parseInt(pageValue || '1', 10)
-  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE))
+  const categories = Array.from(new Set(posts.map((post) => post.category)))
+  const rawCategory = Array.isArray(searchParams?.category) ? searchParams.category[0] : searchParams?.category
+  const category = rawCategory && categories.includes(rawCategory) ? rawCategory : ''
+  const filtered = category ? posts.filter((post) => post.category === category) : posts
+  const rawPage = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
+  const requestedPage = Number.parseInt(rawPage || '1', 10)
+  const totalPages = Math.max(1, Math.ceil(filtered.length / POSTS_PER_PAGE))
   const currentPage = Number.isFinite(requestedPage) ? Math.min(Math.max(requestedPage, 1), totalPages) : 1
-  const pagePosts = posts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE)
-  const featuredPost = pagePosts[0]
-  const additionalPosts = pagePosts.slice(1)
+  const pagePosts = filtered.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE)
+  const featuredPost = posts[0]
 
   return (
     <main className="min-h-screen bg-white pt-24 text-dark md:pt-28" dir="rtl">
-      <div className="border-t border-dark/10">
-        <div className="mx-auto max-w-7xl px-5 pb-20 sm:px-8 md:pb-28 lg:px-10">
-          <header className="my-8 border-r-2 border-[#a18d72] bg-[#f7f6f3] px-6 py-9 sm:px-10 md:my-12 md:px-14 md:py-12">
-            <p className="text-xs tracking-[0.2em] text-[#8a7254]">תכנון · עיצוב · השראה</p>
-            <h1 className="mt-4 text-3xl font-light leading-tight md:text-4xl">בלוג אדריכלות ועיצוב פנים</h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#595550] md:text-lg">רעיונות, מדריכים והשראה לתכנון ולעיצוב הבית.</p>
-          </header>
+      {featuredPost && (
+        <section aria-label="מאמר נבחר" className="relative isolate flex min-h-[29rem] items-end overflow-hidden bg-[#514b43] md:min-h-[35rem]">
+          <img src={featuredPost.coverImage} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-l from-black/65 via-black/30 to-black/15" />
+          <div className="mx-auto w-full max-w-7xl px-6 pb-12 pt-24 text-right text-white sm:px-8 md:pb-16 lg:px-10">
+            <p className="text-xs font-medium tracking-[0.2em]">המאמר הנבחר · {featuredPost.category}</p>
+            <h1 className="mt-4 max-w-2xl text-3xl font-light leading-snug sm:text-4xl md:text-5xl">{featuredPost.title}</h1>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/90 md:text-base">{featuredPost.description}</p>
+            <Link href={`/blog/${featuredPost.slug}`} className="mt-7 inline-flex min-h-11 items-center border border-white px-7 text-sm text-white transition-colors hover:bg-white hover:text-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">לקריאת המאמר ←</Link>
+          </div>
+        </section>
+      )}
 
-          {featuredPost && (
-            <Link href={`/blog/${featuredPost.slug}`} className="group grid overflow-hidden bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark md:grid-cols-2">
-              <div className="flex h-80 items-center justify-center overflow-hidden bg-secondary md:h-96 lg:h-[26rem]">
-                <img src={featuredPost.coverImage} alt="" className="h-full w-full object-contain" />
-              </div>
-              <div className="flex flex-col justify-center px-6 py-7 sm:px-8 md:px-10 lg:px-12">
-                <p className="text-xs tracking-wide text-[#8a7254]">מאמר נבחר <span aria-hidden="true">·</span> {featuredPost.category} <span aria-hidden="true">·</span> {featuredPost.readTime}</p>
-                <h2 className="mt-4 text-2xl font-light leading-snug md:whitespace-nowrap md:text-[clamp(1rem,1.35vw,1.35rem)]">{featuredPost.title}</h2>
-                <p className="mt-4 max-w-xl text-base leading-relaxed text-[#595550]">{featuredPost.description}</p>
-                <span className="mt-6 w-fit border-b border-dark/50 pb-1 text-sm">לקריאת המאמר ←</span>
-              </div>
-            </Link>
-          )}
+      <section className="mx-auto max-w-7xl px-5 pb-20 pt-16 sm:px-8 md:pb-28 md:pt-24 lg:px-10" aria-labelledby="journal-title">
+        <header className="text-center">
+          <p className="text-xs tracking-[0.2em] text-[#8a7254]">תכנון · עיצוב · השראה</p>
+          <h2 id="journal-title" className="mt-4 text-3xl font-light leading-snug md:text-4xl">בלוג אדריכלות ועיצוב פנים</h2>
+          <p className="mt-3 text-base leading-relaxed text-[#66615a]">רעיונות, מדריכים והשראה לתכנון ולעיצוב הבית</p>
+        </header>
 
-          <section className="mt-16 md:mt-24" aria-labelledby="additional-posts-title">
-            <div className="flex items-end justify-between gap-4 border-b border-dark/15 pb-5">
-              <h2 id="additional-posts-title" className="text-2xl font-light md:text-3xl">מאמרים נוספים</h2>
-              <p className="text-sm text-dark/55">עמוד {currentPage} מתוך {totalPages}</p>
-            </div>
-            <div className="mt-8 grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-              {additionalPosts.map((post) => <PostCard key={post.slug} post={post} />)}
-            </div>
-          </section>
+        <nav aria-label="סינון מאמרים לפי נושא" className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-b border-[#dedbd6] pb-5 md:gap-x-9">
+          <Link href={blogUrl('')} aria-current={!category ? 'page' : undefined} className={`min-h-11 border-b px-1 py-3 text-sm transition-colors hover:text-dark ${!category ? 'border-dark text-dark' : 'border-transparent text-[#777168]'}`}>הכול</Link>
+          {categories.map((item) => (
+            <Link key={item} href={blogUrl(item)} aria-current={category === item ? 'page' : undefined} className={`min-h-11 border-b px-1 py-3 text-sm transition-colors hover:text-dark ${category === item ? 'border-dark text-dark' : 'border-transparent text-[#777168]'}`}>{item}</Link>
+          ))}
+        </nav>
 
-          {totalPages > 1 && (
-            <nav aria-label="ניווט בין עמודי הבלוג" className="mt-16 flex items-center justify-center gap-2 border-t border-dark/15 pt-8">
-              {currentPage > 1 && <Link href={currentPage === 2 ? '/blog' : `/blog?page=${currentPage - 1}`} className="inline-flex min-h-11 items-center px-3 text-sm hover:opacity-60">הקודם</Link>}
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                <Link key={page} href={page === 1 ? '/blog' : `/blog?page=${page}`} aria-label={`לעמוד ${page}`} aria-current={page === currentPage ? 'page' : undefined} className={`flex h-11 w-11 items-center justify-center text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-dark ${page === currentPage ? 'bg-dark text-white' : 'border border-dark/20 hover:bg-secondary'}`}>{page}</Link>
-              ))}
-              {currentPage < totalPages && <Link href={`/blog?page=${currentPage + 1}`} className="inline-flex min-h-11 items-center px-3 text-sm hover:opacity-60">הבא</Link>}
-            </nav>
-          )}
+        <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {pagePosts.map((post) => <PostCard key={post.slug} post={post} />)}
         </div>
-      </div>
+
+        {totalPages > 1 && (
+          <nav aria-label="ניווט בין עמודי הבלוג" className="mt-16 flex flex-wrap items-center justify-center gap-2 border-t border-dark/15 pt-8">
+            {currentPage > 1 && <Link href={blogUrl(category, currentPage - 1)} className="inline-flex min-h-11 items-center px-3 text-sm hover:opacity-60">הקודם</Link>}
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+              <Link key={page} href={blogUrl(category, page)} aria-label={`לעמוד ${page}`} aria-current={page === currentPage ? 'page' : undefined} className={`flex h-11 w-11 items-center justify-center text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-dark ${page === currentPage ? 'bg-dark text-white' : 'border border-dark/20 hover:bg-secondary'}`}>{page}</Link>
+            ))}
+            {currentPage < totalPages && <Link href={blogUrl(category, currentPage + 1)} className="inline-flex min-h-11 items-center px-3 text-sm hover:opacity-60">הבא</Link>}
+          </nav>
+        )}
+      </section>
     </main>
   )
 }
