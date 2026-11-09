@@ -108,9 +108,11 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                   <p
                     key={i}
                     className={
-                      i === 0
-                        ? 'text-xl md:text-2xl font-light leading-relaxed text-dark'
-                        : 'text-base md:text-lg leading-loose text-gray-600'
+                      projectId === 'mevo-choron'
+                        ? 'text-lg leading-relaxed text-gray-600 md:text-xl'
+                        : i === 0
+                          ? 'text-xl md:text-2xl font-light leading-relaxed text-dark'
+                          : 'text-base md:text-lg leading-loose text-gray-600'
                     }
                   >
                     {paragraph}
