@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { projects } from '@/lib/projects'
 
 interface GalleryProps {
   images: string[]
@@ -11,6 +12,9 @@ interface GalleryProps {
 
 export default function Gallery({ images, projectId, projectName, aboutText }: GalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const orderedProjects = [...projects.filter(project => project.id !== 'country-house'), ...projects.filter(project => project.id === 'country-house')]
+  const projectIndex = orderedProjects.findIndex(project => project.id === projectId)
+  const projectNumber = projectIndex >= 0 ? String(projectIndex + 1).padStart(2, '0') : ''
 
   const getImageUrl = (imageName: string) => {
     return imageName.startsWith('/') ? imageName : `/project-images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
@@ -95,7 +99,8 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
           <section className="py-10 md:py-14" dir="rtl">
             <div className="max-w-2xl mx-auto px-2">
               {/* Section label with decorative line */}
-              <div className="flex items-center gap-4 mb-8 md:mb-10">
+              <div className="mb-8 md:mb-10">
+                {projectNumber && <p className="mb-5 text-xs tracking-[0.2em] text-dark/45">{projectNumber}</p>}
                 <h2 className="text-2xl font-light text-dark md:text-3xl">
                   על הפרויקט
                 </h2>
@@ -127,7 +132,8 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
             </div>
           </section>
         ) : (
-          <div>
+          <div dir="rtl">
+            {projectNumber && <p className="mb-5 text-xs tracking-[0.2em] text-dark/45">{projectNumber}</p>}
             <h2 className="text-3xl md:text-4xl font-light mb-2">{projectName}</h2>
           </div>
         )}
