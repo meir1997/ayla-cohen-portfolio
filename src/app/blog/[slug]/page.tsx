@@ -106,7 +106,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Cover Image */}
       <figure className="mb-12 w-full md:mb-16" dir="rtl">
-        <div className="flex items-center justify-center bg-[#f1eee9]">
+        <div className="flex items-center justify-center bg-secondary">
           <img
             src={post.coverImage}
             alt={post.title}
