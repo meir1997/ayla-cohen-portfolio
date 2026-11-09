@@ -11,6 +11,7 @@ interface GalleryProps {
 
 export default function Gallery({ images, projectId, projectName, aboutText }: GalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const getImageUrl = (imageName: string) => {
     return imageName.startsWith('/') ? imageName : `/project-images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
@@ -130,21 +131,29 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((imageName, index) => (
-            <div
-              key={index}
-              className="bg-secondary aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition group"
-              onClick={() => setSelectedIndex(index)}
-            >
-              <img
-                src={getImageUrl(imageName)}
-                alt={`${projectName} - ${index + 1}`}
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              />
-            </div>
-          ))}
-        </div>
+        <section aria-label={`גלריית תמונות של ${projectName}`} className="mx-auto w-full">
+          <button
+            type="button"
+            onClick={() => setSelectedIndex(currentIndex)}
+            aria-label={`הגדלת תמונה ${currentIndex + 1} מתוך ${images.length}`}
+            className="mx-auto flex w-full min-h-[240px] items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark"
+          >
+            <img
+              src={getImageUrl(images[currentIndex])}
+              alt={`${projectName} - תמונה ${currentIndex + 1} מתוך ${images.length}`}
+              className="block h-auto max-h-[70vh] w-auto max-w-full object-contain"
+            />
+          </button>
+          <div className="mt-5 flex items-center justify-between gap-4 border-t border-dark/30 pt-3 text-sm" dir="rtl">
+            <button type="button" onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)} className="min-h-11 px-1 transition-opacity hover:opacity-60" aria-label="התמונה הקודמת">
+              הקודמת →
+            </button>
+            <span className="text-xs text-gray-500" aria-live="polite" dir="ltr">{currentIndex + 1} / {images.length}</span>
+            <button type="button" onClick={() => setCurrentIndex((currentIndex + 1) % images.length)} className="min-h-11 px-1 transition-opacity hover:opacity-60" aria-label="התמונה הבאה">
+              ← הבאה
+            </button>
+          </div>
+        </section>
       </div>
     </>
   )
