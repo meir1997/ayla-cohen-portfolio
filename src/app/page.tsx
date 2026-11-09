@@ -87,7 +87,7 @@ export default function Home() {
             אילה כהן
           </h1>
           <TypewriterText
-            text="Interior Design & Architecture"
+            text="Architecture & Interior Design"
             className="text-sm md:text-base tracking-[0.25em] text-gray-100 uppercase"
           />
         </div>

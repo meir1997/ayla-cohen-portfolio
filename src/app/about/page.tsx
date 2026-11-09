@@ -37,7 +37,7 @@ export default function AboutPage() {
         >
           <div className="mx-auto w-full max-w-2xl">
             <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.28em] text-[#8a7254] md:mb-3 md:text-xs">
-              Interior Design &amp; Architecture
+              Architecture &amp; Interior Design
             </p>
             <h1 className="mb-3 text-3xl font-light leading-none tracking-tight text-[#24221f] sm:text-4xl md:mb-5 md:text-5xl lg:text-6xl">
               סטודיו AC
