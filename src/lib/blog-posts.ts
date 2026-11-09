@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-10',
     readTime: '5 דק׳ קריאה',
     category: 'ידע מקצועי',
-    coverImage: '/blog-architect-interior.jpg',
+    coverImage: '/blog-architect-interior-updated.jpg',
     content: `
 <p class="lead">"מה ההבדל בין אדריכלית למעצבת פנים?" - זו אחת השאלות הנפוצות ביותר שאני נשאלת. ההבדל הוא משמעותי, והבנה נכונה שלו יכולה לחסוך לכם הרבה כסף וזמן. בואו נעשה סדר.</p>
 
