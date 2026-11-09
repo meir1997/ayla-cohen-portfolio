@@ -25,7 +25,7 @@ const categoryLabels: Record<string, string> = {
 export default function ProjectsPage({ searchParams }: { searchParams?: { category?: string | string[] } }) {
   const rawCategory = Array.isArray(searchParams?.category) ? searchParams?.category[0] : searchParams?.category
   const category = rawCategory && categoryLabels[rawCategory] ? rawCategory : ''
-  const visibleProjects = category ? projects.filter((project) => project.category === category) : projects
+  const visibleProjects = projects
 
   return (
     <main className="min-h-screen bg-white px-4 pb-20 pt-28 md:pt-36" dir="rtl">
@@ -34,9 +34,6 @@ export default function ProjectsPage({ searchParams }: { searchParams?: { catego
         <nav aria-label="סינון פרויקטים לפי תחום" className="mb-4 border-b border-dark/70">
           <ul className="flex flex-wrap items-center justify-between gap-x-5 gap-y-1 text-sm text-dark">
             <li><Link href="/projects" aria-current={!category ? 'page' : undefined} className={`inline-flex min-h-11 items-center border-b-2 px-1 transition-opacity hover:opacity-60 ${!category ? 'border-dark' : 'border-transparent'}`}>כל הפרויקטים</Link></li>
-            {Object.entries(categoryLabels).map(([value, label]) => (
-              <li key={value}><Link href={`/projects?category=${value}`} aria-current={category === value ? 'page' : undefined} className={`inline-flex min-h-11 items-center border-b-2 px-1 transition-opacity hover:opacity-60 ${category === value ? 'border-dark' : 'border-transparent'}`}>{label}</Link></li>
-            ))}
           </ul>
         </nav>
 
