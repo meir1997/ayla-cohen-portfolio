@@ -15,6 +15,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
   const orderedProjects = [...projects.filter(project => project.id !== 'country-house'), ...projects.filter(project => project.id === 'country-house')]
   const projectIndex = orderedProjects.findIndex(project => project.id === projectId)
   const projectNumber = projectIndex >= 0 ? String(projectIndex + 1).padStart(2, '0') : ''
+  const projectYear = orderedProjects[projectIndex]?.year
 
   const getImageUrl = (imageName: string) => {
     return imageName.startsWith('/') ? imageName : `/project-images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
@@ -96,7 +97,8 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
       {/* Gallery Grid */}
       <div className="space-y-12">
         {aboutText ? (
-          <section className="py-10 md:py-14" dir="rtl">
+          <section className="relative py-10 md:py-14" dir="rtl">
+            {projectYear && <span className="absolute left-0 top-10 text-xs tracking-[0.2em] text-dark/45 md:top-14">{projectYear}</span>}
             <div className="max-w-2xl mx-auto px-2">
               {/* Section label with decorative line */}
               <div className="mb-8 md:mb-10">
@@ -132,7 +134,8 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
             </div>
           </section>
         ) : (
-          <div dir="rtl">
+          <div className="relative" dir="rtl">
+            {projectYear && <span className="absolute left-0 top-0 text-xs tracking-[0.2em] text-dark/45">{projectYear}</span>}
             {projectNumber && <p className="mb-5 text-xs tracking-[0.2em] text-dark/45">{projectNumber}</p>}
             <h2 className="text-3xl md:text-4xl font-light mb-2">{projectName}</h2>
           </div>
