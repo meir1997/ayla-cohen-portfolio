@@ -81,12 +81,7 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
           <p className="mt-3 text-base leading-relaxed text-[#66615a]">רעיונות, מדריכים והשראה לתכנון ולעיצוב הבית</p>
         </header>
 
-        <nav aria-label="סינון מאמרים לפי נושא" className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-b border-[#dedbd6] pb-5 md:gap-x-9">
-          <Link href={blogUrl('')} aria-current={!category ? 'page' : undefined} className={`min-h-11 border-b px-1 py-3 text-sm transition-colors hover:text-dark ${!category ? 'border-dark text-dark' : 'border-transparent text-[#777168]'}`}>הכול</Link>
-          {categories.map((item) => (
-            <Link key={item} href={blogUrl(item)} aria-current={category === item ? 'page' : undefined} className={`min-h-11 border-b px-1 py-3 text-sm transition-colors hover:text-dark ${category === item ? 'border-dark text-dark' : 'border-transparent text-[#777168]'}`}>{item}</Link>
-          ))}
-        </nav>
+
 
         <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {pagePosts.map((post) => <PostCard key={post.slug} post={post} />)}
