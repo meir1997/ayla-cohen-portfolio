@@ -45,7 +45,7 @@ export default function AboutPage() {
 
             <div className="space-y-2 text-[clamp(0.72rem,3.05vw,0.9rem)] leading-[1.5] text-[#595550] md:space-y-3 md:text-[clamp(0.78rem,1vw,1rem)] md:leading-[1.65]">
               <p>
-                בית הוא המקום בו מגשימים חלומות. כשהבית מתוכנן כראוי הוא יכול להכיל את כל הדברים החשובים לנו, מבלי להתפשר על פרקטיקה, פונקציונליות ונוחות. כשנכנס העיצוב לתמונה, <span className="md:whitespace-nowrap">והנה מתגשם לו החלום.</span>
+                בית הוא המקום בו מגשימים חלומות. כשהבית מתוכנן כראוי הוא יכול להכיל את כל הדברים החשובים לנו, מבלי להתפשר על פרקטיקה, פונקציונליות ונוחות. כשנכנס העיצוב לתמונה, <span className="md:whitespace-nowrap">התוצאה מדברת בעד עצמה.</span>
               </p>
 
               <p className="about-detail hidden md:block">
