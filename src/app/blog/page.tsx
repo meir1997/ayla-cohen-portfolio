@@ -77,8 +77,8 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
       <section className="mx-auto max-w-7xl px-5 pb-20 pt-16 sm:px-8 md:pb-28 md:pt-24 lg:px-10" aria-labelledby="journal-title">
         <header className="text-center">
           <p className="text-xs tracking-[0.2em] text-[#8a7254]">תכנון · עיצוב · השראה</p>
-          <h2 id="journal-title" className="mt-4 text-3xl font-light leading-snug md:text-4xl">בלוג אדריכלות ועיצוב פנים</h2>
-          <p className="mt-3 text-base leading-relaxed text-[#66615a]">רעיונות, מדריכים והשראה לתכנון ולעיצוב הבית</p>
+          <h2 id="journal-title" className="mt-4 text-2xl font-light leading-tight sm:text-3xl md:text-4xl">בלוג אדריכלות ועיצוב פנים</h2>
+          <p className="mt-6 text-lg leading-relaxed text-gray-600 md:text-xl">רעיונות, מדריכים והשראה לתכנון ולעיצוב הבית</p>
         </header>
 
 
