@@ -92,9 +92,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 {project.description}
               </p>
             </div>
-            <div className="text-right">
-              <div className="text-sm text-gray-500">{project.year}</div>
-            </div>
           </div>
 
           {/* Project Meta */}
