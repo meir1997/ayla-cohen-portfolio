@@ -143,7 +143,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                 src={getImageUrl(imageName)}
                 alt={`${projectName} - תמונה ${index + 1} מתוך ${images.length}`}
                 loading={index === 0 ? 'eager' : 'lazy'}
-                className={`block h-auto w-auto max-w-full object-contain ${index % 7 === 0 ? 'max-h-[85vh]' : 'h-48 sm:h-64 md:h-80'}`}
+                className={`block w-auto max-w-full object-contain ${index % 7 === 0 ? 'h-auto max-h-[85vh]' : 'h-48 sm:h-64 md:h-80'}`}
               />
             </button>
           ))}
