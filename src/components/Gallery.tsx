@@ -96,10 +96,9 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
             <div className="max-w-2xl mx-auto px-2">
               {/* Section label with decorative line */}
               <div className="flex items-center gap-4 mb-8 md:mb-10">
-                <div className="h-px w-12 md:w-16 bg-dark/40"></div>
-                <span className="text-[11px] md:text-xs tracking-[0.35em] uppercase text-gray-500 font-medium">
+                <h2 className="text-2xl font-light text-dark md:text-3xl">
                   על הפרויקט
-                </span>
+                </h2>
               </div>
 
               {/* Paragraphs */}
