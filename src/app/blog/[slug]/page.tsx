@@ -112,7 +112,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <img
             src={post.coverImage}
             alt={post.title}
-            className={post.slug === 'five-critical-steps-before-renovation' ? 'block h-auto w-auto max-h-[70vh] max-w-[min(46.55vh,100%)] object-contain' : 'block h-auto max-h-[70vh] w-auto max-w-full object-contain'}
+            className="block h-auto max-h-[70vh] w-auto max-w-full object-contain"
           />
         </div>
         <figcaption className="mx-auto mt-4 flex max-w-5xl items-center justify-between gap-4 border-b border-[#ded8cf] px-4 pb-4 text-xs tracking-[0.12em] text-[#84796d]">
