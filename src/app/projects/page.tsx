@@ -18,7 +18,7 @@ const projectThumbnails: Record<string, string> = {
 }
 
 export default function ProjectsPage() {
-  const visibleProjects = projects
+  const visibleProjects = [...projects.filter((project) => project.id !== 'country-house'), ...projects.filter((project) => project.id === 'country-house')]
 
   return (
     <main className="min-h-screen bg-white px-4 pb-20 pt-28 md:pt-36" dir="rtl">
