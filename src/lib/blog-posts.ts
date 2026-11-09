@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-05',
     readTime: '5 דק׳ קריאה',
     category: 'בעלי מקצוע',
-    coverImage: '/api/images/mevo-choron/3.webp',
+    coverImage: '/blog-contractor.jpg',
     content: `
 <p class="lead"><strong>"איך מוצאים בעל מקצוע טוב?"</strong> זו השאלה הראשונה שאני שומעת מלקוחות חדשים. במאמר הזה אחלוק איתכם את תשעת הדגשים שאני משתמשת בהם כדי לאתר בעלי מקצוע איכותיים.</p>
 
