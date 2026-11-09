@@ -30,12 +30,12 @@ export default function ProjectsPage({ searchParams }: { searchParams?: { catego
   return (
     <main className="min-h-screen bg-white px-4 pb-20 pt-28 md:pt-36" dir="rtl">
       <div className="mx-auto max-w-[1600px]">
-        <h1 className="sr-only">פרויקטים באדריכלות ועיצוב פנים</h1>
-        <nav aria-label="סינון פרויקטים לפי תחום" className="mb-4 border-b border-dark/70">
-          <ul className="flex flex-wrap items-center justify-between gap-x-5 gap-y-1 text-sm text-dark">
-            <li><Link href="/projects" aria-current={!category ? 'page' : undefined} className={`inline-flex min-h-11 items-center border-b-2 px-1 transition-opacity hover:opacity-60 ${!category ? 'border-dark' : 'border-transparent'}`}>כל הפרויקטים</Link></li>
-          </ul>
-        </nav>
+        <header className="mb-8 bg-secondary px-6 py-10 sm:px-10 md:mb-12 md:py-14">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-[#8a7254]" dir="ltr" style={{ textAlign: 'right' }}>
+            Architecture &amp; Interior Design
+          </p>
+          <h1 className="text-2xl font-light leading-tight sm:text-3xl md:text-4xl">כל הפרויקטים</h1>
+        </header>
 
         <section aria-label="פרויקטים" className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visibleProjects.map((project, index) => (
