@@ -531,7 +531,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-05-05',
     readTime: '6 דק׳ קריאה',
     category: 'מטבחים',
-    coverImage: '/blog-smart-kitchen.jpg',
+    coverImage: '/blog-smart-kitchen-original.jpg',
     content: `
 <p class="lead">מטבח מתוכנן היטב משלב בין יופי, נוחות וחשיבה מדויקת על הפרטים הקטנים. תכנון המותאם לאורח החיים שלכם יוצר חלל נעים ופונקציונלי, שהופך את הבישול והאירוח לחוויה טבעית ומהנה ביומיום.</p>
 
