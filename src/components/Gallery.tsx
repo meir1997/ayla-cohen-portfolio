@@ -11,7 +11,6 @@ interface GalleryProps {
 
 export default function Gallery({ images, projectId, projectName, aboutText }: GalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   const getImageUrl = (imageName: string) => {
     return imageName.startsWith('/') ? imageName : `/project-images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
@@ -131,28 +130,23 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
           </div>
         )}
 
-        <section aria-label={`גלריית תמונות של ${projectName}`} className="mx-auto w-full">
-          <button
-            type="button"
-            onClick={() => setSelectedIndex(currentIndex)}
-            aria-label={`הגדלת תמונה ${currentIndex + 1} מתוך ${images.length}`}
-            className="mx-auto flex w-full min-h-[240px] items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark"
-          >
-            <img
-              src={getImageUrl(images[currentIndex])}
-              alt={`${projectName} - תמונה ${currentIndex + 1} מתוך ${images.length}`}
-              className="block h-auto max-h-[70vh] w-auto max-w-full object-contain"
-            />
-          </button>
-          <div className="mt-5 flex items-center justify-between gap-4 border-t border-dark/30 pt-3 text-sm" dir="rtl">
-            <button type="button" onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)} className="min-h-11 px-1 transition-opacity hover:opacity-60" aria-label="התמונה הקודמת">
-              הקודמת →
+        <section aria-label={`גלריית תמונות של ${projectName}`} className="grid grid-cols-2 items-start gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-14">
+          {images.map((imageName, index) => (
+            <button
+              key={imageName}
+              type="button"
+              onClick={() => setSelectedIndex(index)}
+              aria-label={`הגדלת תמונה ${index + 1} מתוך ${images.length}`}
+              className={`flex w-full justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark ${index % 3 === 0 ? 'col-span-2' : ''}`}
+            >
+              <img
+                src={getImageUrl(imageName)}
+                alt={`${projectName} - תמונה ${index + 1} מתוך ${images.length}`}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                className={`block h-auto w-auto max-w-full object-contain ${index % 3 === 0 ? 'max-h-[85vh]' : 'max-h-[60vh]'}`}
+              />
             </button>
-            <span className="text-xs text-gray-500" aria-live="polite" dir="ltr">{currentIndex + 1} / {images.length}</span>
-            <button type="button" onClick={() => setCurrentIndex((currentIndex + 1) % images.length)} className="min-h-11 px-1 transition-opacity hover:opacity-60" aria-label="התמונה הבאה">
-              ← הבאה
-            </button>
-          </div>
+          ))}
         </section>
       </div>
     </>
