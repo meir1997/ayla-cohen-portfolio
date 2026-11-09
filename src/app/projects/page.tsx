@@ -27,7 +27,7 @@ export default function ProjectsPage() {
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-[#8a7254]" dir="ltr" style={{ textAlign: 'right' }}>
             Architecture &amp; Interior Design
           </p>
-          <h1 className="text-2xl font-light leading-tight sm:text-3xl md:text-4xl">כל הפרויקטים</h1>
+          <h1 className="text-2xl font-light leading-tight sm:text-3xl md:text-4xl">פרויקטים נבחרים</h1>
         </header>
 
         <section aria-label="פרויקטים" className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
