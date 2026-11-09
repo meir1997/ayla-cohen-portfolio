@@ -68,7 +68,7 @@ export function getProjectImages(): ProjectImages[] {
         const projectPath = path.join(portfolioPath, dir)
         const files = fs.readdirSync(projectPath)
           .filter(f => /\.(jpg|jpeg|webp|png|gif)$/i.test(f))
-          .filter(f => !(projectId === 'mevo-choron' && ['8.webp', '45.jpg', '46.jpg'].includes(f)))
+          .filter(f => !(projectId === 'mevo-choron' && ['8.webp', '45.jpg', '46.jpg', '61.webp'].includes(f)))
           .sort((a, b) => {
             const aNum = parseInt(a.split('.')[0])
             const bNum = parseInt(b.split('.')[0])
