@@ -32,7 +32,7 @@ export default function AboutPage() {
         </div>
 
         <article
-          className="about-panel flex min-h-0 items-center overflow-hidden px-6 py-4 sm:px-10 md:px-[clamp(2rem,4vw,5rem)] md:py-8 lg:px-[clamp(3rem,6vw,7rem)]"
+          className="about-panel flex min-h-0 items-center overflow-hidden bg-secondary px-6 py-4 sm:px-10 md:px-[clamp(2rem,4vw,5rem)] md:py-8 lg:px-[clamp(3rem,6vw,7rem)]"
           dir="rtl"
         >
           <div className="mx-auto w-full max-w-2xl">
