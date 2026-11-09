@@ -6,10 +6,18 @@ export interface Project {
   images: number
   category: 'residential' | 'kitchen' | 'living'
   featured: boolean
-  year: number
+  year?: number
 }
 
 export const projects: Project[] = [
+  {
+    id: 'country-house',
+    name: 'בית פרטי כפרי מיוחד',
+    description: 'בית פרטי בסגנון כפרי, המשלב עץ, לבנים וחלונות קשתיים.',
+    images: 11,
+    category: 'residential',
+    featured: false,
+  },
   {
     id: 'mevo-choron',
     name: 'בית משפחתי מרווח במושב',

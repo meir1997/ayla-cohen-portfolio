@@ -14,6 +14,7 @@ interface ProjectPageProps {
 
 export async function generateStaticParams() {
   return [
+    { id: 'country-house' },
     { id: 'mevo-choron' },
     { id: 'penthouse-jerusalem' },
     { id: 'luxury-salon' },
@@ -57,7 +58,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     name: project.name,
     description: project.description,
     url: absoluteUrl(`/projects/${project.id}`),
-    dateCreated: String(project.year),
+    ...(project.year ? { dateCreated: String(project.year) } : {}),
     creator: {
       '@type': 'Person',
       name: siteConfig.name,

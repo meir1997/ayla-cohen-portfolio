@@ -11,6 +11,12 @@ export interface ProjectImages {
 export function getProjectImages(): ProjectImages[] {
   const projects: ProjectImages[] = [
     {
+      projectId: 'country-house',
+      projectName: 'בית פרטי כפרי מיוחד',
+      images: Array.from({ length: 11 }, (_, index) => `/country-house/${index + 1}.jpg`),
+      count: 11,
+    },
+    {
       projectId: 'mevo-choron',
       projectName: 'מבוא חורון',
       images: [],

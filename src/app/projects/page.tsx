@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 }
 
 const projectThumbnails: Record<string, string> = {
+  'country-house': '/country-house/1.jpg',
   'mevo-choron': '/api/images/mevo-choron/5.webp',
   'penthouse-jerusalem': '/api/images/penthouse-jerusalem/87.jpeg',
   'luxury-salon': '/api/images/luxury-salon/1.jpg',

@@ -13,7 +13,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
   const getImageUrl = (imageName: string) => {
-    return `/api/images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
+    return imageName.startsWith('/') ? imageName : `/api/images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
   }
 
   const close = () => setSelectedIndex(null)
