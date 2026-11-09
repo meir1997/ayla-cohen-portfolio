@@ -109,11 +109,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Cover Image */}
       <figure className="mb-12 w-full md:mb-16" dir="rtl">
         <div className="flex items-center justify-center bg-secondary">
-          <img
-            src={post.coverImage}
-            alt={post.title}
-            className="block h-auto max-h-[70vh] w-auto max-w-full object-contain"
-          />
+          {post.slug === 'building-permit-guide' ? (
+            <div className="relative aspect-[1064/1600] w-[min(46.55vh,100vw)] overflow-hidden">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="absolute left-1/2 top-1/2 h-auto w-[150.376%] max-w-none"
+                style={{ transform: 'translate(-50%, -50%) rotate(90deg)' }}
+              />
+            </div>
+          ) : (
+            <img
+              src={post.coverImage}
+              alt={post.title}
+              className="block h-auto max-h-[70vh] w-auto max-w-full object-contain"
+            />
+          )}
         </div>
         <figcaption className="mx-auto mt-4 flex max-w-5xl items-center justify-between gap-4 border-b border-[#ded8cf] px-4 pb-4 text-xs tracking-[0.12em] text-[#84796d]">
           <span>{post.category}</span>
