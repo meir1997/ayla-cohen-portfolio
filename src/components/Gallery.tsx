@@ -106,6 +106,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                 <h2 className="text-2xl font-light text-dark md:text-3xl">
                   על הפרויקט
                 </h2>
+                <div aria-hidden="true" className="mt-4 h-px w-16 bg-dark/40" />
               </div>
 
               {/* Paragraphs */}
