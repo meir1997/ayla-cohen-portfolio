@@ -131,20 +131,20 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
           </div>
         )}
 
-        <section aria-label={`גלריית תמונות של ${projectName}`} className="grid grid-cols-6 items-center gap-x-3 gap-y-6 sm:gap-x-5 md:gap-x-6 md:gap-y-10">
+        <section aria-label={`גלריית תמונות של ${projectName}`} className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 md:gap-6">
           {images.map((imageName, index) => (
             <button
               key={imageName}
               type="button"
               onClick={() => setSelectedIndex(index)}
               aria-label={`הגדלת תמונה ${index + 1} מתוך ${images.length}`}
-              className={`flex w-full justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark ${index % 7 === 0 ? 'col-span-6' : 'col-span-3 md:col-span-2'}`}
+              className={`flex w-full justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark ${index === 0 ? 'col-span-2 md:col-span-3' : 'aspect-[4/5] overflow-hidden'}`}
             >
               <img
                 src={getImageUrl(imageName)}
                 alt={`${projectName} - תמונה ${index + 1} מתוך ${images.length}`}
                 loading={index === 0 ? 'eager' : 'lazy'}
-                className={`block w-auto max-w-full object-contain ${index % 7 === 0 ? 'h-auto max-h-[85vh]' : 'h-48 sm:h-64 md:h-80'}`}
+                className={`block ${index === 0 ? 'h-auto w-auto max-h-[85vh] max-w-full object-contain' : 'h-full w-full object-cover'}`}
               />
             </button>
           ))}
