@@ -105,15 +105,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       </header>
 
       {/* Cover Image */}
-      <figure className="mx-auto mb-12 max-w-5xl px-4 md:mb-16" dir="rtl">
-        <div className="flex items-center justify-center bg-[#f1eee9] px-5 py-7 sm:px-10 sm:py-10 md:px-14 md:py-12">
+      <figure className="mb-12 w-full md:mb-16" dir="rtl">
+        <div className="flex items-center justify-center bg-[#f1eee9]">
           <img
             src={post.coverImage}
             alt={post.title}
             className="block h-auto max-h-[70vh] w-auto max-w-full object-contain"
           />
         </div>
-        <figcaption className="mt-4 flex items-center justify-between gap-4 border-b border-[#ded8cf] pb-4 text-xs tracking-[0.12em] text-[#84796d]">
+        <figcaption className="mx-auto mt-4 flex max-w-5xl items-center justify-between gap-4 border-b border-[#ded8cf] px-4 pb-4 text-xs tracking-[0.12em] text-[#84796d]">
           <span>{post.category}</span>
           <span dir="ltr">STUDIO AC</span>
         </figcaption>
