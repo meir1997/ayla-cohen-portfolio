@@ -130,20 +130,20 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
           </div>
         )}
 
-        <section aria-label={`גלריית תמונות של ${projectName}`} className="grid grid-cols-2 items-start gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-14">
+        <section aria-label={`גלריית תמונות של ${projectName}`} className="grid grid-cols-6 items-center gap-x-3 gap-y-6 sm:gap-x-5 md:gap-x-6 md:gap-y-10">
           {images.map((imageName, index) => (
             <button
               key={imageName}
               type="button"
               onClick={() => setSelectedIndex(index)}
               aria-label={`הגדלת תמונה ${index + 1} מתוך ${images.length}`}
-              className={`flex w-full justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark ${index % 3 === 0 ? 'col-span-2' : ''}`}
+              className={`flex w-full justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark ${index % 7 === 0 ? 'col-span-6' : 'col-span-3 md:col-span-2'}`}
             >
               <img
                 src={getImageUrl(imageName)}
                 alt={`${projectName} - תמונה ${index + 1} מתוך ${images.length}`}
                 loading={index === 0 ? 'eager' : 'lazy'}
-                className={`block h-auto w-auto max-w-full object-contain ${index % 3 === 0 ? 'max-h-[85vh]' : 'max-h-[60vh]'}`}
+                className={`block h-auto w-auto max-w-full object-contain ${index % 7 === 0 ? 'max-h-[85vh]' : 'h-48 sm:h-64 md:h-80'}`}
               />
             </button>
           ))}
