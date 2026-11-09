@@ -17,15 +17,7 @@ const projectThumbnails: Record<string, string> = {
   'luxury-kitchen': '/api/images/luxury-kitchen/92.jpeg',
 }
 
-const categoryLabels: Record<string, string> = {
-  residential: 'מגורים',
-  living: 'סלונים',
-  kitchen: 'מטבחים',
-}
-
-export default function ProjectsPage({ searchParams }: { searchParams?: { category?: string | string[] } }) {
-  const rawCategory = Array.isArray(searchParams?.category) ? searchParams?.category[0] : searchParams?.category
-  const category = rawCategory && categoryLabels[rawCategory] ? rawCategory : ''
+export default function ProjectsPage() {
   const visibleProjects = projects
 
   return (
