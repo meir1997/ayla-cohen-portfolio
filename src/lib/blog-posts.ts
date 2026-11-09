@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-01',
     readTime: '6 דק׳ קריאה',
     category: 'תכנון',
-    coverImage: '/blog-renovation-steps.jpg',
+    coverImage: '/blog-renovation-steps-wide.jpg',
     content: `
 <p class="lead">שיפוץ הוא אחת ההחלטות הכלכליות הגדולות - ובכל זאת, רוב האנשים ניגשים אליו ללא תכנון מסודר. במאמר הזה אני אחלוק איתכם את חמשת השלבים שאני עושה עם כל לקוח חדש, עוד לפני שמרימים את הפטיש הראשון.</p>
 
