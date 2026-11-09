@@ -105,18 +105,19 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       </header>
 
       {/* Cover Image */}
-      <div className="max-w-5xl mx-auto px-4 mb-12 md:mb-16">
-        <div className="relative overflow-hidden bg-[#eeeae3] px-6 sm:px-10 md:px-12" dir="rtl">
-          <span className="absolute inset-x-0 inset-y-[12%] border-y border-black" aria-hidden="true" />
-          <div className="relative aspect-[1206/1490] w-full md:w-1/2">
-            <img
-              src={post.coverImage}
-              alt={post.title}
-              className="block h-full w-full object-contain"
-            />
-          </div>
+      <figure className="mx-auto mb-12 max-w-5xl px-4 md:mb-16" dir="rtl">
+        <div className="flex items-center justify-center bg-[#f1eee9] px-5 py-7 sm:px-10 sm:py-10 md:px-14 md:py-12">
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="block h-auto max-h-[70vh] w-auto max-w-full object-contain"
+          />
         </div>
-      </div>
+        <figcaption className="mt-4 flex items-center justify-between gap-4 border-b border-[#ded8cf] pb-4 text-xs tracking-[0.12em] text-[#84796d]">
+          <span>{post.category}</span>
+          <span dir="ltr">STUDIO AC</span>
+        </figcaption>
+      </figure>
 
       {/* Content */}
       <div
