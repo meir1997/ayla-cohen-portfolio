@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { getAllPosts, type BlogPost } from '@/lib/blog-posts'
 import { absoluteUrl } from '@/lib/site'
@@ -31,7 +32,7 @@ function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
       <div className="aspect-[4/3] overflow-hidden bg-secondary">
-        <img src={post.coverImage} alt="" loading="lazy" className={['five-critical-steps-before-renovation', 'smart-kitchen-planning'].includes(post.slug) ? 'mx-auto h-full w-[60%] object-cover transition-opacity duration-300 group-hover:opacity-90' : ['architect-vs-interior-designer', 'color-palette-guide'].includes(post.slug) ? 'mx-auto h-full w-[56.25%] object-cover transition-opacity duration-300 group-hover:opacity-90' : 'h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-90'} />
+        {post.slug === 'smart-kitchen-planning' ? <Image src={post.coverImage} alt="" width={1365} height={2048} quality={90} sizes="(max-width: 639px) 60vw, (max-width: 1023px) 30vw, 20vw" className="mx-auto h-full w-[60%] object-cover transition-opacity duration-300 group-hover:opacity-90" /> : <img src={post.coverImage} alt="" loading="lazy" className={['five-critical-steps-before-renovation', 'smart-kitchen-planning'].includes(post.slug) ? 'mx-auto h-full w-[60%] object-cover transition-opacity duration-300 group-hover:opacity-90' : ['architect-vs-interior-designer', 'color-palette-guide'].includes(post.slug) ? 'mx-auto h-full w-[56.25%] object-cover transition-opacity duration-300 group-hover:opacity-90' : 'h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-90'} />}
       </div>
       <div className="pt-5 text-right">
         <p className="text-[11px] tracking-wide text-[#8a7254]">{post.category} <span aria-hidden="true">·</span> {post.readTime}</p>
