@@ -30,7 +30,7 @@ function blogUrl(category: string, page = 1) {
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
-      <div className="aspect-[4/3] overflow-hidden bg-[#f2f0ec]">
+      <div className="aspect-[4/3] overflow-hidden bg-secondary">
         <img src={post.coverImage} alt="" loading="lazy" className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-90" />
       </div>
       <div className="pt-5 text-right">
@@ -59,7 +59,7 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
   return (
     <main className="min-h-screen bg-white pt-24 text-dark md:pt-28" dir="rtl">
       {featuredPost && (
-        <section aria-label="מאמר נבחר" className="bg-[#f1eee9]">
+        <section aria-label="מאמר נבחר" className="bg-secondary">
           <div className="mx-auto grid max-w-7xl items-stretch md:grid-cols-2">
             <div className="flex items-center justify-center px-6 pt-8 sm:px-10 md:order-1 md:px-10 md:py-10">
               <img src={featuredPost.coverImage} alt={featuredPost.title} className="block h-auto max-h-[38rem] w-auto max-w-full object-contain" />
