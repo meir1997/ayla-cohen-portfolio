@@ -115,7 +115,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                   <p
                     key={i}
                     className={
-                      projectId === 'mevo-choron'
+                      ['mevo-choron', 'penthouse-jerusalem'].includes(projectId)
                         ? `text-lg leading-relaxed text-gray-600 md:text-xl ${i === 0 ? 'font-semibold' : ''}`
                         : i === 0
                           ? 'text-xl md:text-2xl font-light leading-relaxed text-dark'
