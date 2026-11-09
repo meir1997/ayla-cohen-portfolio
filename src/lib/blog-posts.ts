@@ -321,7 +321,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-25',
     readTime: '6 דק׳ קריאה',
     category: 'צבעים ועיצוב',
-    coverImage: '/api/images/penthouse-jerusalem/22.jpg',
+    coverImage: '/project-images/penthouse-jerusalem/22.jpg',
     content: `
 <p class="lead">הבחירה של הצבעים בבית היא אחת ההחלטות המשפיעות ביותר על תחושת החלל. צבע נכון יגרום לכם להרגיש רגועים, אנרגטיים או יצירתיים. בואו נבחר נכון.</p>
 

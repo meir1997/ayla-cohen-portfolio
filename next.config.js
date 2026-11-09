@@ -1,5 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    // Images are read only at build time (generateStaticParams); keep them out of serverless bundles.
+    outputFileTracingExcludes: { '*': ['portfolio_images/**'] },
+  },
+  async redirects() {
+    return [{
+      source: '/api/images/:projectId/:imageName',
+      destination: '/project-images/:projectId/:imageName',
+      permanent: true,
+    }];
+  },
   async headers() {
     return [{
       source: '/design-guide.pdf',

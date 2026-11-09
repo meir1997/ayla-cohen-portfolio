@@ -12,6 +12,8 @@ interface ProjectPageProps {
   }
 }
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   return [
     { id: 'country-house' },

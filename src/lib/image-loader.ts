@@ -94,5 +94,5 @@ export function getProjectById(projectId: string): ProjectImages | undefined {
 }
 
 export function getImageUrl(projectId: string, imageName: string): string {
-  return `/api/images/${projectId}/${imageName}`
+  return `/project-images/${projectId}/${imageName}`
 }
