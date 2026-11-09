@@ -239,7 +239,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-15',
     readTime: '7 דק׳ קריאה',
     category: 'בירוקרטיה',
-    coverImage: '/api/images/mevo-choron/11.webp',
+    coverImage: '/blog-building-permit.jpg',
     content: `
 <p class="lead">היתר בנייה הוא אחד הנושאים שהכי מבלבלים ומלחיצים לקוחות. מי שלא עבר את זה, לא מאמין כמה בירוקרטיה וכמה זמן זה דורש. במאמר הזה אעשה לכם סדר בכל מה שקשור להיתר בנייה.</p>
 
