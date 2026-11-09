@@ -59,14 +59,17 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
   return (
     <main className="min-h-screen bg-white pt-24 text-dark md:pt-28" dir="rtl">
       {featuredPost && (
-        <section aria-label="מאמר נבחר" className="relative isolate flex min-h-[29rem] items-end overflow-hidden bg-[#514b43] md:min-h-[35rem]">
-          <img src={featuredPost.coverImage} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-l from-black/65 via-black/30 to-black/15" />
-          <div className="mx-auto w-full max-w-7xl px-6 pb-12 pt-24 text-right text-white sm:px-8 md:pb-16 lg:px-10">
-            <p className="text-xs font-medium tracking-[0.2em]">המאמר הנבחר · {featuredPost.category}</p>
-            <h1 className="mt-4 max-w-2xl text-3xl font-light leading-snug sm:text-4xl md:text-5xl">{featuredPost.title}</h1>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/90 md:text-base">{featuredPost.description}</p>
-            <Link href={`/blog/${featuredPost.slug}`} className="mt-7 inline-flex min-h-11 items-center border border-white px-7 text-sm text-white transition-colors hover:bg-white hover:text-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">לקריאת המאמר ←</Link>
+        <section aria-label="מאמר נבחר" className="bg-[#f1eee9]">
+          <div className="mx-auto grid max-w-7xl items-stretch md:grid-cols-2">
+            <div className="flex items-center justify-center px-6 pt-8 sm:px-10 md:order-1 md:px-10 md:py-10">
+              <img src={featuredPost.coverImage} alt={featuredPost.title} className="block h-auto max-h-[38rem] w-auto max-w-full object-contain" />
+            </div>
+            <div className="flex flex-col items-start justify-center px-7 py-10 text-right text-[#24221f] sm:px-10 md:order-2 md:px-12 md:py-16">
+              <p className="text-xs font-medium tracking-[0.2em] text-[#8a7254]">המאמר הנבחר · {featuredPost.category}</p>
+              <h1 className="mt-5 text-3xl font-light leading-snug sm:text-4xl md:text-5xl">{featuredPost.title}</h1>
+              <p className="mt-5 text-base leading-relaxed text-[#625b53]">{featuredPost.description.replace('המדריך המלא', 'המאמר המלא')}</p>
+              <Link href={`/blog/${featuredPost.slug}`} className="mt-8 inline-flex min-h-11 items-center border border-[#24221f] px-7 text-sm transition-colors hover:bg-[#24221f] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">לקריאת המאמר ←</Link>
+            </div>
           </div>
         </section>
       )}
