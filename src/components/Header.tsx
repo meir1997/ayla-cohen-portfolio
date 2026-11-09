@@ -12,7 +12,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-24 md:h-28">
         {/* Logo */}
         <Link href="/" onClick={close} className="inline-flex min-h-11 items-center">
-          <img src="/logo.jpg" alt="אילה כהן" className="h-20 md:h-24 w-auto" />
+          <img src="/logo.jpg" alt="אילה כהן" className="h-20 md:h-24 w-auto mix-blend-multiply" />
         </Link>
 
         {/* Desktop Menu */}
