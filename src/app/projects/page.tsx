@@ -53,9 +53,8 @@ export default function ProjectsPage({ searchParams }: { searchParams?: { catego
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent px-5 pb-5 pt-16 text-right text-white transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
-                <p className="text-xs tracking-wide">{categoryLabels[project.category]}</p>
-                <h2 className="mt-1 text-xl font-light md:text-2xl">{project.name}</h2>
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30 px-5 text-center text-white transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+                <h2 className="text-xl font-light md:text-2xl">{project.name}</h2>
               </div>
             </Link>
           ))}
