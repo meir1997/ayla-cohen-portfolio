@@ -118,10 +118,11 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                 ))}
               </div>
 
-              {/* Closing accent */}
-              <div className="mt-10 md:mt-12 flex justify-start">
-                <div className="h-px w-16 bg-dark/30"></div>
-              </div>
+              {projectId !== 'mevo-choron' && (
+                <div className="mt-10 md:mt-12 flex justify-start">
+                  <div className="h-px w-16 bg-dark/30"></div>
+                </div>
+              )}
             </div>
           </section>
         ) : (
