@@ -72,6 +72,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     <div className="pt-32 pb-20 px-4">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <div className="max-w-6xl mx-auto">
+        <div className="bg-secondary px-6 py-8 sm:px-10 md:py-10">
         {/* Back Button */}
         <Link
           href="/projects"
@@ -82,7 +83,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </Link>
 
         {/* Project Header */}
-        <div className="mb-12">
+        <div>
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>
               <h1 className="text-4xl md:text-5xl font-light mb-2">
@@ -102,6 +103,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               {project.category === 'living' && 'סלון'}
             </div>
           </div>
+        </div>
+
         </div>
 
         {/* Gallery */}
