@@ -130,12 +130,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <p className="text-gray-600 mb-6">
               בואו נדבר על הרעיון שלכם
             </p>
-            <Link
-              href="/services/interior-design-jerusalem"
-              className="mr-3 inline-block px-8 py-3 border border-dark text-dark hover:bg-dark hover:text-white transition text-sm font-medium"
-            >
-              לשירותי העיצוב
-            </Link>
+
             <Link
               href="/contact"
               className="inline-block px-8 py-3 bg-dark text-white hover:bg-gray-800 transition text-sm font-medium"
