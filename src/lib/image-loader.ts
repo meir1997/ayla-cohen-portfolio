@@ -76,6 +76,15 @@ export function getProjectImages(): ProjectImages[] {
             return aNum - bNum
           })
 
+        if (projectId === 'penthouse-jerusalem') {
+          const featuredOrder = ['17.jpg', '82.jpg', '24.jpg', '22.jpg']
+          files.sort((a, b) => {
+            const aIndex = featuredOrder.indexOf(a)
+            const bIndex = featuredOrder.indexOf(b)
+            return (aIndex < 0 ? featuredOrder.length : aIndex) - (bIndex < 0 ? featuredOrder.length : bIndex)
+          })
+        }
+
         const projectIndex = projects.findIndex(p => p.projectId === projectId)
         if (projectIndex !== -1) {
           projects[projectIndex].images = files
