@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 import { projects } from '@/lib/projects'
 
 interface GalleryProps {
@@ -151,12 +152,24 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
               aria-label={`הגדלת תמונה ${index + 1} מתוך ${images.length}`}
               className={`flex w-full justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark ${index === 0 ? 'col-span-2 md:col-span-3' : 'aspect-[4/5] overflow-hidden'}`}
             >
-              <img
-                src={getImageUrl(imageName)}
-                alt={`${projectName} - תמונה ${index + 1} מתוך ${images.length}`}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                className={`block ${index === 0 ? 'h-auto w-auto max-h-[85vh] max-w-full object-contain' : 'h-full w-full object-cover'}`}
-              />
+              {projectId === 'penthouse-jerusalem' && imageName === '65.jpg' ? (
+                <Image
+                  src={getImageUrl(imageName)}
+                  alt={`${projectName} - תמונה ${index + 1} מתוך ${images.length}`}
+                  width={2048}
+                  height={1365}
+                  quality={90}
+                  sizes="(max-width: 767px) 50vw, (max-width: 1200px) 33vw, 384px"
+                  className="block h-full w-full object-cover"
+                />
+              ) : (
+                <img
+                  src={getImageUrl(imageName)}
+                  alt={`${projectName} - תמונה ${index + 1} מתוך ${images.length}`}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  className={`block ${index === 0 ? 'h-auto w-auto max-h-[85vh] max-w-full object-contain' : 'h-full w-full object-cover'}`}
+                />
+              )}
             </button>
           ))}
         </section>
