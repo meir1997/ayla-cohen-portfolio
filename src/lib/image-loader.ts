@@ -90,6 +90,11 @@ export function getProjectImages(): ProjectImages[] {
             const [toiletImage] = files.splice(toiletIndex, 1)
             files.splice(files.indexOf('51.jpg'), 0, toiletImage)
           }
+          const firstImageIndex = files.indexOf('60.jpg')
+          const secondImageIndex = files.indexOf('55.jpg')
+          if (firstImageIndex >= 0 && secondImageIndex >= 0) {
+            ;[files[firstImageIndex], files[secondImageIndex]] = [files[secondImageIndex], files[firstImageIndex]]
+          }
         }
 
         const projectIndex = projects.findIndex(p => p.projectId === projectId)
