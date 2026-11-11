@@ -128,7 +128,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                 ))}
               </div>
 
-              {!['mevo-choron', 'penthouse-jerusalem', 'luxury-salon'].includes(projectId) && (
+              {!['mevo-choron', 'penthouse-jerusalem', 'luxury-salon', 'luxury-kitchen'].includes(projectId) && (
                 <div className="mt-10 md:mt-12 flex justify-start">
                   <div className="h-px w-16 bg-dark/30"></div>
                 </div>
