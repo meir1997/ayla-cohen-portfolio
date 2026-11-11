@@ -13,7 +13,7 @@ export function getProjectImages(): ProjectImages[] {
     {
       projectId: 'country-house',
       projectName: 'בית פרטי כפרי מיוחד',
-      images: [2, 1, 3, 4, 6, 7, 8, 9, 10, 11].map((number) => `/country-house/${number === 1 ? '1-v2' : number}.jpg`),
+      images: [2, 1, 3, 4, 6, 7, 8, 9, 10, 11].map((number) => `/country-house/${number === 1 ? '1-v2' : number === 4 ? '4-v2' : number}.jpg`),
       count: 10,
     },
     {
