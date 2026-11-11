@@ -70,6 +70,7 @@ export function getProjectImages(): ProjectImages[] {
           .filter(f => /\.(jpg|jpeg|webp|png|gif)$/i.test(f))
           .filter(f => !(projectId === 'mevo-choron' && ['8.webp', '45.jpg', '46.jpg', '61.webp'].includes(f)))
           .filter(f => !(projectId === 'penthouse-jerusalem' && ['27.jpg', '40.jpg', '49.jpg', '64.jpg'].includes(f)))
+          .filter(f => !(projectId === 'luxury-salon' && f === '17.jpg'))
           .sort((a, b) => {
             const aNum = parseInt(a.split('.')[0])
             const bNum = parseInt(b.split('.')[0])
