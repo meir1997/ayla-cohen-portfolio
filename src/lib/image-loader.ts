@@ -12,7 +12,7 @@ export function getProjectImages(): ProjectImages[] {
   const projects: ProjectImages[] = [
     {
       projectId: 'forest-villa',
-      projectName: 'וילה לצד היער',
+      projectName: 'וילה בחיק הטבע',
       images: [1, 2, 3, 4, 5, 6].map((number) => `/forest-villa/${number}.jpg`),
       count: 6,
     },
