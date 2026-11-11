@@ -19,7 +19,8 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
   const projectYear = orderedProjects[projectIndex]?.year
 
   const getImageUrl = (imageName: string) => {
-    return imageName.startsWith('/') ? imageName : `/project-images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
+    const url = imageName.startsWith('/') ? imageName : `/project-images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
+    return projectId === 'luxury-kitchen' && ['88.jpeg', '89.jpeg'].includes(imageName) ? `${url}?v=2` : url
   }
 
   const close = () => setSelectedIndex(null)
