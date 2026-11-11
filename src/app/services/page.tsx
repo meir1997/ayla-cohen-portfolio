@@ -21,7 +21,7 @@ export default function ServicesPage() {
       <div className="mx-auto max-w-6xl">
         <header className="mb-12 max-w-6xl md:mb-16">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-[#8a7254]">
-            Interior Design &amp; Architecture
+            Architecture &amp; Interior Design
           </p>
           <h1 className="text-2xl font-light leading-tight sm:text-3xl md:text-4xl">
             אדריכלות ועיצוב פנים שמתחילים בחיים עצמם
