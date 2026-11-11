@@ -77,6 +77,14 @@ export function getProjectImages(): ProjectImages[] {
             return aNum - bNum
           })
 
+        if (projectId === 'luxury-salon') {
+          const diningIndex = files.indexOf('67.jpg')
+          const shelvingIndex = files.indexOf('102.jpg')
+          if (diningIndex >= 0 && shelvingIndex >= 0) {
+            ;[files[diningIndex], files[shelvingIndex]] = [files[shelvingIndex], files[diningIndex]]
+          }
+        }
+
         if (projectId === 'penthouse-jerusalem') {
           const featuredOrder = ['17.jpg', '82.jpg', '24.jpg', '22.jpg', '87.jpeg', '65.jpg', '72.jpg', '79.jpg', '29.jpg', '25.jpg', '31.jpg', '32.jpg', '77.jpg', '98.jpg', '18.jpg', '20.jpg']
           files.sort((a, b) => {
