@@ -81,6 +81,11 @@ export function getProjectImages(): ProjectImages[] {
         if (projectId === 'luxury-kitchen') {
           const heroIndex = files.indexOf('92.jpeg')
           if (heroIndex >= 0) files.unshift(...files.splice(heroIndex, 1))
+          const firstIndex = files.indexOf('95.jpeg')
+          const secondIndex = files.indexOf('97.jpeg')
+          if (firstIndex >= 0 && secondIndex >= 0) {
+            ;[files[firstIndex], files[secondIndex]] = [files[secondIndex], files[firstIndex]]
+          }
         }
 
         if (projectId === 'luxury-salon') {
