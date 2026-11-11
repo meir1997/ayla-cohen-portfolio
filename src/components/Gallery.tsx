@@ -20,6 +20,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
 
   const getImageUrl = (imageName: string) => {
     const url = imageName.startsWith('/') ? imageName : `/project-images/${encodeURIComponent(projectId)}/${encodeURIComponent(imageName)}`
+    if (projectId === 'country-house' && imageName === '/country-house/3.jpg') return `${url}?v=2`
     return projectId === 'luxury-kitchen' && ['88.jpeg', '89.jpeg'].includes(imageName) ? `${url}?v=2` : url
   }
 
