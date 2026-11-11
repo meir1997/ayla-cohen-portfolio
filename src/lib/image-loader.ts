@@ -13,7 +13,7 @@ export function getProjectImages(): ProjectImages[] {
     {
       projectId: 'forest-villa',
       projectName: 'וילה בחיק הטבע',
-      images: [1, 2, 3, 4, 5, 6].map((number) => `/forest-villa/${number}.jpg`),
+      images: [1, 2, 3, 5, 4, 6].map((number) => `/forest-villa/${number}.jpg`),
       count: 6,
     },
     {
