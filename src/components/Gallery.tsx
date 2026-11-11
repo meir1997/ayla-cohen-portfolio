@@ -118,7 +118,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                   <p
                     key={i}
                     className={
-                      ['country-house', 'mevo-choron', 'penthouse-jerusalem', 'luxury-salon', 'luxury-kitchen'].includes(projectId)
+                      ['forest-villa', 'country-house', 'mevo-choron', 'penthouse-jerusalem', 'luxury-salon', 'luxury-kitchen'].includes(projectId)
                         ? `text-lg leading-relaxed text-gray-600 md:text-xl ${i === 0 ? 'font-semibold' : ''}`
                         : i === 0
                           ? 'text-xl md:text-2xl font-light leading-relaxed text-dark'
@@ -130,7 +130,7 @@ export default function Gallery({ images, projectId, projectName, aboutText }: G
                 ))}
               </div>
 
-              {!['country-house', 'mevo-choron', 'penthouse-jerusalem', 'luxury-salon', 'luxury-kitchen'].includes(projectId) && (
+              {!['forest-villa', 'country-house', 'mevo-choron', 'penthouse-jerusalem', 'luxury-salon', 'luxury-kitchen'].includes(projectId) && (
                 <div className="mt-10 md:mt-12 flex justify-start">
                   <div className="h-px w-16 bg-dark/30"></div>
                 </div>

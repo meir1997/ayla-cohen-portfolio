@@ -11,6 +11,12 @@ export interface ProjectImages {
 export function getProjectImages(): ProjectImages[] {
   const projects: ProjectImages[] = [
     {
+      projectId: 'forest-villa',
+      projectName: 'וילה לצד היער',
+      images: [1, 2, 3, 4, 5, 6].map((number) => `/forest-villa/${number}.jpg`),
+      count: 6,
+    },
+    {
       projectId: 'country-house',
       projectName: 'בית פרטי כפרי מיוחד',
       images: [2, 1, 3, 4, 6, 7, 8, 9, 10, 11].map((number) => `/country-house/${[1, 4, 6, 7].includes(number) ? `${number}-v2` : number}.jpg`),

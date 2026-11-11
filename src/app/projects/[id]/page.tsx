@@ -16,6 +16,7 @@ export const dynamicParams = false
 
 export async function generateStaticParams() {
   return [
+    { id: 'forest-villa' },
     { id: 'country-house' },
     { id: 'mevo-choron' },
     { id: 'penthouse-jerusalem' },
