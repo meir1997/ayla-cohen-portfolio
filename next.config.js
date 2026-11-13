@@ -5,11 +5,15 @@ const nextConfig = {
     outputFileTracingExcludes: { '*': ['portfolio_images/**'] },
   },
   async redirects() {
-    return [{
-      source: '/api/images/:projectId/:imageName',
-      destination: '/project-images/:projectId/:imageName',
-      permanent: true,
-    }];
+    return [
+      {
+        source: '/api/images/:projectId/:imageName',
+        destination: '/project-images/:projectId/:imageName',
+        permanent: true,
+      },
+      // Old Linktree link to the free guide
+      { source: '/gift', destination: '/guide', permanent: true },
+    ];
   },
   async headers() {
     return [{

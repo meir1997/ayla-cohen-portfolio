@@ -34,7 +34,7 @@ export default function ConditionalLayout({
     }
   }, [isScrollLocked])
 
-  if (isLanding) {
+  if (isLanding || pathname === '/links') {
     return <>{children}</>
   }
 
