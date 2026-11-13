@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 const whatsapp = 'https://wa.me/message/K5HY32EGIVTFK1'
-const tiktok = 'https://www.tiktok.com/@user9663479917429'
+const tiktok = 'https://www.tiktok.com/@ayala.design'
 
 const links = [
   { label: 'המדריך המלא לעיצוב הבית במתנה', href: '/guide', featured: true },
