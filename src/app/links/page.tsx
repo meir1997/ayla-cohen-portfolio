@@ -48,9 +48,9 @@ export default function LinksPage() {
     <div className="min-h-dvh bg-secondary px-5 py-12 md:py-16">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
         <img
-          src="/ayala-portrait.jpg"
+          src="/ayala-profile.jpg"
           alt="אילה כהן"
-          className="h-28 w-28 rounded-full object-cover object-top shadow-sm ring-1 ring-accent/40"
+          className="h-28 w-28 rounded-full object-cover shadow-sm ring-1 ring-accent/40"
         />
 
         <h1 className="mt-6 text-3xl font-light tracking-wide text-dark">אילה כהן</h1>
